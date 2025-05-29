@@ -89,21 +89,7 @@ public class Camioneta extends Vehiculo{
             "\nAVISO: No es necesario llevar el vehiculo a mantenimiento";
     }
     
-    @Override
-    public String mostrarInformacion(){
-    return "Codigo de la camioneta: " + codigoVehiculo +
-            "\nNumero de placa: " + numeroPlaca +
-            "\nModelo de la camioneta: " + modelo +
-            "\nMarca de la camioneta: " + marca +
-            "\nAño de fabricacion de la camioneta: " + año + 
-            "\nCosto de adquisicion de la camioneta: " + costoAdquisicion + 
-            "\nPrecio de renta: " + precioRenta + 
-            "\nKilometraje acumulado: " + kilometraje +
-            "\nEstado de la camioneta: " + estado +
-            "\nFecha de la ultima revision de la camioneta: " + fechaRevision +
-            "\nNumero de asientos para pasajeros: " + numeroPasajeros +
-            "\nCosto del pasaje: " + costoPasaje;
-    }
+    // Metodos leer
     
     public void leerNumeroAsientosVehiculo(){
         String numeroString = "";
@@ -115,6 +101,8 @@ public class Camioneta extends Vehiculo{
             }
             catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero entre 1 y 100");
+            } finally {
+                if (!validarNumeroPasajeros()) System.out.println("ERROR. Ingresar un numero de asientos valido");
             }
         } while (!validarNumeroEntero(numeroString) || !validarNumeroPasajeros());
     }
@@ -129,6 +117,8 @@ public class Camioneta extends Vehiculo{
             } 
             catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero o decimal");
+            } finally {
+                if (costoPasaje < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
             }
         } while (!validarNumeroFlotante(numeroString) || costoPasaje < 0);
     }
@@ -142,8 +132,26 @@ public class Camioneta extends Vehiculo{
                 numeroPuertas = Integer.parseInt(numeroString) ;
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero entre 1 y 8");
+            } finally {
+                if (!validarNumeroPuertas()) System.out.println("ERROR. Ingresar un numero entre 1 y 8");
             }
         } while (!validarNumeroEntero(numeroString) || !validarNumeroPuertas()); 
+    }
+    
+    @Override
+    public String mostrarInformacion(){
+        return "Codigo de la camioneta: " + codigoVehiculo +
+            "\nNumero de placa: " + numeroPlaca +
+            "\nModelo de la camioneta: " + modelo +
+            "\nMarca de la camioneta: " + marca +
+            "\nAño de fabricacion de la camioneta: " + año + 
+            "\nCosto de adquisicion de la camioneta: " + costoAdquisicion + 
+            "\nPrecio de renta: " + precioRenta + 
+            "\nKilometraje acumulado: " + kilometraje +
+            "\nEstado de la camioneta: " + estado +
+            "\nFecha de la ultima revision de la camioneta: " + fechaRevision +
+            "\nNumero de asientos para pasajeros: " + numeroPasajeros +
+            "\nCosto del pasaje: " + costoPasaje;
     }
     
     @Override

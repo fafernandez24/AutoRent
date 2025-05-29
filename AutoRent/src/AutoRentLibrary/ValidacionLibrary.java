@@ -9,7 +9,7 @@ package AutoRentLibrary;
  * @author Freddy A. Fernández
  */
 public class ValidacionLibrary {
-    
+       
     // Validaciones 
     
     public static boolean validarNumeroEntero(String numero){
@@ -22,6 +22,6 @@ public class ValidacionLibrary {
     
     public static boolean validarPorcentaje(float porcentaje){
         return porcentaje > -1 && porcentaje <= 100;
-    }
+    } 
     
 }

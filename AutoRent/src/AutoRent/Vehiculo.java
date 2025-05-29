@@ -152,7 +152,7 @@ public abstract class Vehiculo {
     }
     
     public boolean validarAnio(){
-        return año <= 9999 && año >= 1885;
+        return año <= 2030 && año >= 1885;
     }
     
     public boolean validarFecha(String fecha){
@@ -183,6 +183,8 @@ public abstract class Vehiculo {
                 codigoVehiculo = Integer.parseInt(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero");  
+            } finally {
+                if (codigoVehiculo < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
             }
         } while (!validarNumeroEntero(numeroString));
     } 
@@ -205,6 +207,7 @@ public abstract class Vehiculo {
         do{
             System.out.print("Ingresar marca del vehiculo: ");
             marca = entrada.nextLine();
+            if (!validarMarca()) System.out.println("ERROR. Ingresar nada mas letras");
         } while (!validarMarca());
     }
     
@@ -217,6 +220,8 @@ public abstract class Vehiculo {
                 costoAdquisicion= Float.parseFloat(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero o con decimales");
+            } finally {
+                if (costoAdquisicion < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
             }
         } while (!validarNumeroFlotante(numeroString));
     }
@@ -230,6 +235,8 @@ public abstract class Vehiculo {
                 precioRenta = Float.parseFloat(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero o con decimales");
+            } finally {
+                if (precioRenta < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
             }
         } while (!validarNumeroFlotante(numeroString));
     }
@@ -238,11 +245,13 @@ public abstract class Vehiculo {
         String numeroString = "";
         do{
             try{
-                System.out.print("Ingresar año del vehiculo: ");
+                System.out.print("Ingresar año del vehiculo(1885-2030): ");
                 numeroString = entrada.nextLine();
                 año = Integer.parseInt(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero");
+            } finally {
+                if (!validarAnio()) System.out.println("ERROR. Ingresar un año entre 1885 y 2030");
             }
         } while (!validarNumeroEntero(numeroString) || !validarAnio());
     }
@@ -256,7 +265,9 @@ public abstract class Vehiculo {
                 kilometraje = Integer.parseInt(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero");  
-            } 
+            } finally {
+                if (kilometraje < 0) System.out.println("Ingresar un numero mayor o igual a 0");
+            }
         } while (!validarNumeroEntero(numeroString));
     }
     
@@ -270,6 +281,8 @@ public abstract class Vehiculo {
                 estado = Integer.parseInt(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero de 0 a 3");
+            } finally {
+                if (!validarEstado()) System.out.println("ERROR. Ingresar un numero del 0 al 3");
             }
         } while (!validarNumeroEntero(numeroString) || !validarEstado());
     }
@@ -279,6 +292,7 @@ public abstract class Vehiculo {
         do{
             System.out.print("Ingresar ultima fecha de revision del vehiculo(dd-mm-YYYY): ");
             fecha = entrada.nextLine();
+            if (!validarFecha(fecha)) System.out.println("ERROR. Ingresar correctamente la fecha");
         } while (!validarFecha(fecha));
         int anio = Integer.parseInt(fecha.substring(6,10));
         int dia = Integer.parseInt(fecha.substring(0,2));

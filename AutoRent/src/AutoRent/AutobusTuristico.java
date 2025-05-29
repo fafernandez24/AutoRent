@@ -14,7 +14,7 @@ import java.time.LocalDate;
  */
 public class AutobusTuristico extends Vehiculo{
     
-  // Atributos
+    // Atributos
     
     private String nombreChofer;
     private String destinoInicial;
@@ -23,7 +23,7 @@ public class AutobusTuristico extends Vehiculo{
     private boolean sanitario;
     private float gastoGasolina;
     
-  // Metodos
+    // Metodos
 
     // Constructor #1
     public AutobusTuristico(){}
@@ -119,9 +119,9 @@ public class AutobusTuristico extends Vehiculo{
                     "\nUltima fecha de revision: " + fechaRevision +
                     "\nAVISO: Llevar el vehiculo a mantenimiento. Se recomienda su retiro temporal.";
         }
-        return "Kilometraje: " + kilometraje + 
-            "\nUltima fecha de revision: " + fechaRevision +
-            "\nAVISO: No es necesario llevar el vehiculo a mantenimiento";
+        return  "Kilometraje: " + kilometraje + 
+                "\nUltima fecha de revision: " + fechaRevision +
+                "\nAVISO: No es necesario llevar el vehiculo a mantenimiento";
     }
     
     // Metodos leer
@@ -130,6 +130,7 @@ public class AutobusTuristico extends Vehiculo{
         do{
             System.out.print("Ingresar el nombre del chofer del autobus: ");
             nombreChofer = entrada.nextLine();
+            if (!validarNombreChofer()) System.out.println("ERROR. Ingresar un nombre valido");
         } while (!validarNombreChofer());
     }
     
@@ -152,6 +153,8 @@ public class AutobusTuristico extends Vehiculo{
                 tiempoRecorrido = Integer.parseInt(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero");
+            } finally {
+                if (tiempoRecorrido < 0) System.out.println("ERROR. Ingresar un numero mayor o igual 0");
             }
         } while (!validarNumeroEntero(numeroString));
     }
@@ -165,6 +168,8 @@ public class AutobusTuristico extends Vehiculo{
                 gastoGasolina = Float.parseFloat(numeroString);
             } catch (NumberFormatException error){
                 System.out.println("ERROR. Ingresar un numero entero o con decimales");
+            } finally {
+                if (gastoGasolina < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
             }
         } while (!validarNumeroFlotante(numeroString));
     }
@@ -184,7 +189,9 @@ public class AutobusTuristico extends Vehiculo{
                 setSanitario(true);
             }
         } while (!"s".equals(baño) && !"n".equals(baño));
-    }  
+    }
+    
+    // Metodos mostrar
     
     public String mostrarBaño(boolean bol){
         if (bol == false) return "NO";

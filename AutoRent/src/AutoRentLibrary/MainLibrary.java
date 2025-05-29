@@ -16,60 +16,23 @@ import java.util.Scanner;
  */
 public class MainLibrary {
     
-    // Menus
-    
-    public static int menu(){
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("(1) Agregar vehiculo");
-        System.out.println("(2) Actualizar informacion del vehiculo");
-        System.out.println("(3) Calcular y mostrar precio de renta");
-        System.out.println("(4) Gestion de retiro");
-        System.out.println("(5) Informacion del vehiculo");
-        System.out.println("(0) Salir");
-        System.out.print("Opcion: ");
-        int opcion = entrada.nextInt(); 
-        return opcion;
-    }
-    
-    public static int calcularRentaMenu(){
-        Scanner entrada = new Scanner(System.in); 
-        String numeroString = "";
-        int opcion = 0;
-        do{
-            try{
-                System.out.println("(1) Calcular renta normal: ");
-                System.out.println("(2) calcular renta con extra: ");
-                System.out.print("Opcion: ");            
-                numeroString = entrada.nextLine();
-                opcion = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar una opcion valida");
-            }
-        } while (!validarNumeroEntero(numeroString));
-        return opcion;
-    }
-    
-    public static int gestionarRetiroMenu(){
-        Scanner entrada = new Scanner(System.in); 
-        String numeroString = "";
-        int opcion = 0;
-        do{
-            try{
-                System.out.println("(1) Rentar vehiculo");
-                System.out.println("(2) Recuperar vehiculo");
-                System.out.println("(3) Retirar vehiculo");
-                System.out.println("(4) Determinar mantenimiento");
-                System.out.print("Opcion: ");            
-                numeroString = entrada.nextLine();
-                opcion = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar una opcion valida");
-            }
-        } while (!validarNumeroEntero(numeroString));
-        return opcion;
-    }
-    
     // Ingresar datos
+    
+    public static int leerOpcion(){
+        Scanner entrada = new Scanner(System.in);
+        String numeroString = "";
+        int opcion = 0;
+        do{
+            try{
+                System.out.print("Opcion: ");
+                numeroString = entrada.nextLine();
+                opcion = Integer.parseInt(numeroString);
+            } catch (NumberFormatException error){
+                System.out.println("ERROR. Ingresar una opcion valida");  
+            }
+        } while (!validarNumeroEntero(numeroString));
+        return opcion;
+    }
     
     public static float calcularRentaIngresarPorcentaje(){
         Scanner entrada = new Scanner(System.in); 
@@ -117,7 +80,49 @@ public class MainLibrary {
             }
         } while (!validarNumeroFlotante(numeroString));
         return seguro;
-    } 
+    }
+    
+    // Menus
+    
+    public static int menu(){
+        int opcion = 0;
+        System.out.println("(1) Agregar vehiculo");
+        System.out.println("(2) Actualizar informacion del vehiculo");
+        System.out.println("(3) Calcular y mostrar precio de renta");
+        System.out.println("(4) Actualizar estado y determinar mantenimiento");
+        System.out.println("(5) Informacion del vehiculo");
+        System.out.println("(0) Salir");
+        do{
+            opcion = leerOpcion();
+            if (opcion > 5 || opcion < 0) System.out.println("ERROR. Ingresar una opcion valida");
+        } while (opcion > 5 || opcion < 0);
+        
+        return opcion;
+    }
+    
+    public static int calcularRentaMenu(){
+        int opcion = 0;
+        System.out.println("(1) Calcular renta normal: ");
+        System.out.println("(2) calcular renta con extra: ");
+        do{
+            opcion = leerOpcion();
+            if (opcion > 2 || opcion < 1) System.out.println("ERROR. Ingresar una opcion valida");
+        } while (opcion > 2 || opcion < 1);
+        return opcion;
+    }
+    
+    public static int gestionarRetiroMenu(){
+        int opcion = 0;
+        System.out.println("(1) Rentar vehiculo");
+        System.out.println("(2) Recuperar vehiculo");
+        System.out.println("(3) Retirar vehiculo");
+        System.out.println("(4) Determinar mantenimiento");    
+        do{
+            opcion = leerOpcion();
+            if (opcion > 4 || opcion < 1) System.out.println("ERROR. Ingresar una opcion valida");
+        } while (opcion > 4 || opcion < 1);
+        return opcion;
+    }
     
     // Procedimientos y funciones
     
