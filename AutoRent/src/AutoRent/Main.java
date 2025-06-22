@@ -4,7 +4,10 @@
  */
 package AutoRent;
 
-import AutoRentLibrary.MainLibrary;
+import model.AutobusTuristico;
+import model.Camioneta;
+import model.Vehiculo;
+import control.MainLibrary;
 import java.time.LocalDate;
 
 /**

@@ -4,7 +4,8 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/PC/Documents/GitHub/AutoRent/AutoRent/src/AutoRent/Main.java</file>
-            <file>file:/C:/Users/PC/Documents/GitHub/AutoRent/AutoRent/src/AutoRent/Vehiculo.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/AutoRent/AutoRent/src/model/Vehiculo.java</file>
+            <file>file:/C:/Users/PC/Documents/GitHub/AutoRent/AutoRent/src/view/MenuAutoRent.java</file>
         </group>
     </open-files>
 </project-private>

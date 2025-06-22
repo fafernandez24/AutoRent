@@ -6,6 +6,7 @@
             <name>AutoRent</name>
             <source-roots>
                 <root id="src.dir"/>
+                <root id="src.Other%20Sources.dir"/>
             </source-roots>
             <test-roots>
                 <root id="test.src.dir"/>
