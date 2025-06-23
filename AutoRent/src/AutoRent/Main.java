@@ -29,7 +29,6 @@ public class Main {
 
         CamionetaXMLControl camionetaXML = new CamionetaXMLControl();
         ArrayList<Camioneta> listaCamioneta = camionetaXML.todosLasCamionetas();
-        
         AutobusTuristicoXMLControl autobusXML = new AutobusTuristicoXMLControl();
         ArrayList<AutobusTuristico> listaAutobusTuristico = autobusXML.todosLosAutobuses();
        
@@ -38,7 +37,6 @@ public class Main {
         
         ArrayList<Vehiculo> listaVehiculo = (ArrayList<Vehiculo>) leerListadoDeVehiculos(listaCamioneta, listaAutobusTuristico);
 
-        
         Menu openStart = new Menu(listaVehiculo);
         openStart.setVisible(true);
     }

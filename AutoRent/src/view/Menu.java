@@ -9,8 +9,12 @@ import control.CamionetaXMLControl;
 import static control.MenuControl.actualizarEstadoVehiculo;
 import static control.MenuControl.calcularRentaBasicaVehiculo;
 import static control.MenuControl.calcularRentaExtraVehiculo;
+import static control.MenuControl.changeButtonColor;
+import static control.MenuControl.changePanelColor;
 import static control.MenuControl.encontrarPosicionVehiculoId;
 import static control.MenuControl.encontrarVehiculoId;
+import static control.MenuControl.focusGained;
+import static control.MenuControl.focusLost;
 import java.io.IOException;
 import java.util.List;
 import model.AutobusTuristico;
@@ -32,6 +36,8 @@ public class Menu extends javax.swing.JFrame {
     /**
      * Creates new form Menu
      * @param listaVehiculo
+     * @throws org.jdom.JDOMException
+     * @throws java.io.IOException
      */
     public Menu(List<Vehiculo> listaVehiculo) throws JDOMException, IOException {
         this.setUndecorated(true);
@@ -87,6 +93,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel185 = new javax.swing.JLabel();
         jLabel186 = new javax.swing.JLabel();
         jLabel191 = new javax.swing.JLabel();
+        botonActualizarVehiculo = new javax.swing.JButton();
         jPanel30 = new javax.swing.JPanel();
         botonBuscarJugador = new javax.swing.JButton();
         textoBuscarVehiculo = new javax.swing.JTextField();
@@ -156,7 +163,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel27 = new javax.swing.JPanel();
         jLabel78 = new javax.swing.JLabel();
         jLabel132 = new javax.swing.JLabel();
-        botonCrearTorneoSingle3 = new javax.swing.JPanel();
+        estado0 = new javax.swing.JPanel();
         jLabel148 = new javax.swing.JLabel();
         jPanel40 = new javax.swing.JPanel();
         jLabel149 = new javax.swing.JLabel();
@@ -174,13 +181,13 @@ public class Menu extends javax.swing.JFrame {
         jLabel163 = new javax.swing.JLabel();
         jLabel151 = new javax.swing.JLabel();
         jLabel152 = new javax.swing.JLabel();
-        botonCrearTorneoSingle4 = new javax.swing.JPanel();
+        estado1 = new javax.swing.JPanel();
         jLabel150 = new javax.swing.JLabel();
         jPanel41 = new javax.swing.JPanel();
         jLabel153 = new javax.swing.JLabel();
         jLabel154 = new javax.swing.JLabel();
         jLabel155 = new javax.swing.JLabel();
-        botonCrearTorneoSingle7 = new javax.swing.JPanel();
+        estado2 = new javax.swing.JPanel();
         jLabel164 = new javax.swing.JLabel();
         jPanel44 = new javax.swing.JPanel();
         jLabel165 = new javax.swing.JLabel();
@@ -198,7 +205,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel173 = new javax.swing.JLabel();
         jLabel174 = new javax.swing.JLabel();
         jLabel175 = new javax.swing.JLabel();
-        botonCrearTorneoSingle10 = new javax.swing.JPanel();
+        estado3 = new javax.swing.JPanel();
         jLabel176 = new javax.swing.JLabel();
         jPanel47 = new javax.swing.JPanel();
         jLabel177 = new javax.swing.JLabel();
@@ -377,15 +384,15 @@ public class Menu extends javax.swing.JFrame {
         textoBuscarJugador5 = new javax.swing.JTextField();
         jSeparator51 = new javax.swing.JSeparator();
         jLabel99 = new javax.swing.JLabel();
-        ingresarRondaEliminacionDirecta7 = new javax.swing.JComboBox<>();
-        entradaCantidadJugadores6 = new javax.swing.JTextField();
+        actualizarEstado = new javax.swing.JComboBox<>();
+        actualizarKilometraje = new javax.swing.JTextField();
         jLabel45 = new javax.swing.JLabel();
         jSeparator68 = new javax.swing.JSeparator();
         jLabel93 = new javax.swing.JLabel();
-        entradaCantidadJugadores25 = new javax.swing.JTextField();
+        actualizarRevision = new javax.swing.JTextField();
         jLabel100 = new javax.swing.JLabel();
         jSeparator88 = new javax.swing.JSeparator();
-        entradaCantidadJugadores29 = new javax.swing.JTextField();
+        actualizarPlaca = new javax.swing.JTextField();
         jLabel136 = new javax.swing.JLabel();
         jSeparator89 = new javax.swing.JSeparator();
         jLabel46 = new javax.swing.JLabel();
@@ -406,9 +413,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel3MouseMoved(evt);
+            }
+        });
         jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel3MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel3MouseExited(evt);
             }
         });
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -421,9 +436,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 360, 50));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel5MouseMoved(evt);
+            }
+        });
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel5MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel5MouseExited(evt);
             }
         });
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -436,9 +459,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 360, 50));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel6MouseMoved(evt);
+            }
+        });
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel6MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel6MouseExited(evt);
             }
         });
         jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -451,9 +482,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 360, 50));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel7MouseMoved(evt);
+            }
+        });
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel7MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel7MouseExited(evt);
             }
         });
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -466,9 +505,17 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 360, 50));
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jPanel8MouseMoved(evt);
+            }
+        });
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel8MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanel8MouseExited(evt);
             }
         });
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -519,8 +566,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel181.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel181.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel181.setText("CREAR TORNEO");
-        botonCrearCamioneta.add(jLabel181, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel181.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel181.setText("CREAR");
+        botonCrearCamioneta.add(jLabel181, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 4, 130, 30));
 
         jPanel48.setBackground(new java.awt.Color(30, 25, 161));
         jPanel48.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -557,8 +605,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel187.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel187.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel187.setText("CREAR TORNEO");
-        botonCrearAutobus.add(jLabel187, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel187.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel187.setText("CREAR");
+        botonCrearAutobus.add(jLabel187, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel49.setBackground(new java.awt.Color(30, 25, 161));
         jPanel49.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -620,6 +669,31 @@ public class Menu extends javax.swing.JFrame {
         jLabel191.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel25.add(jLabel191, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 315, 389));
 
+        botonActualizarVehiculo.setBackground(new java.awt.Color(30, 25, 161));
+        botonActualizarVehiculo.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
+        botonActualizarVehiculo.setForeground(new java.awt.Color(255, 255, 255));
+        botonActualizarVehiculo.setText("ACTUALIZAR VEHICULO");
+        botonActualizarVehiculo.setBorder(null);
+        botonActualizarVehiculo.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                botonActualizarVehiculoMouseMoved(evt);
+            }
+        });
+        botonActualizarVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonActualizarVehiculoMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                botonActualizarVehiculoMouseExited(evt);
+            }
+        });
+        botonActualizarVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizarVehiculoActionPerformed(evt);
+            }
+        });
+        jPanel25.add(botonActualizarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 630, 650, 40));
+
         pestania.addTab("tab1", jPanel25);
 
         jPanel30.setBackground(new java.awt.Color(255, 255, 255));
@@ -629,6 +703,7 @@ public class Menu extends javax.swing.JFrame {
         botonBuscarJugador.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         botonBuscarJugador.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscarJugador.setText("Buscar");
+        botonBuscarJugador.setBorder(null);
         botonBuscarJugador.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botonBuscarJugadorMouseMoved(evt);
@@ -692,7 +767,7 @@ public class Menu extends javax.swing.JFrame {
                 mostrarPlacaActionPerformed(evt);
             }
         });
-        jPanel30.add(mostrarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 560, 40));
+        jPanel30.add(mostrarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 180, 510, 40));
 
         jSeparator11.setForeground(new java.awt.Color(0, 0, 0));
         jPanel30.add(jSeparator11, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, 200, 10));
@@ -1000,8 +1075,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel135.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel135.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel135.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel135.setText("renta basica");
-        botonCrearTorneoSingle1.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        botonCrearTorneoSingle1.add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel38.setBackground(new java.awt.Color(30, 25, 161));
         jPanel38.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1050,8 +1126,9 @@ public class Menu extends javax.swing.JFrame {
 
         jLabel143.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel143.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel143.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel143.setText("renta extra");
-        botonCrearTorneoSingle2.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        botonCrearTorneoSingle2.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel39.setBackground(new java.awt.Color(30, 25, 161));
         jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1113,26 +1190,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel132.setText("ACTUALIZAR ESTADO...");
         jPanel27.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 630, 60));
 
-        botonCrearTorneoSingle3.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        estado0.setBackground(new java.awt.Color(30, 25, 161));
+        estado0.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseMoved(evt);
+                estado0MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle3.addMouseListener(new java.awt.event.MouseAdapter() {
+        estado0.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseClicked(evt);
+                estado0MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle3MouseExited(evt);
+                estado0MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        estado0.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel148.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel148.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel148.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel148.setText("ACTUALIZAR");
-        botonCrearTorneoSingle3.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        estado0.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel40.setBackground(new java.awt.Color(30, 25, 161));
         jPanel40.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1142,7 +1220,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel149.setText("CREAR TORNEO");
         jPanel40.add(jLabel149, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle3.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        estado0.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
         botonCrearTorneoSingle5.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoSingle5.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1175,17 +1253,17 @@ public class Menu extends javax.swing.JFrame {
 
         botonCrearTorneoSingle5.add(jPanel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        botonCrearTorneoSingle3.add(botonCrearTorneoSingle5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
+        estado0.add(botonCrearTorneoSingle5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
 
         jLabel158.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel158.setForeground(new java.awt.Color(153, 153, 153));
         jLabel158.setText("0: NO DISPONIBLE");
-        botonCrearTorneoSingle3.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 60));
+        estado0.add(jLabel158, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 60));
 
         jLabel159.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jLabel159.setToolTipText("");
         jLabel159.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        botonCrearTorneoSingle3.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 315, 200));
+        estado0.add(jLabel159, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 315, 200));
 
         botonCrearTorneoSingle6.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoSingle6.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1218,19 +1296,19 @@ public class Menu extends javax.swing.JFrame {
 
         botonCrearTorneoSingle6.add(jPanel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        botonCrearTorneoSingle3.add(botonCrearTorneoSingle6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
+        estado0.add(botonCrearTorneoSingle6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
 
         jLabel162.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel162.setForeground(new java.awt.Color(153, 153, 153));
         jLabel162.setText("1: DISPONIBLE");
-        botonCrearTorneoSingle3.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, 60));
+        estado0.add(jLabel162, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, 60));
 
         jLabel163.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jLabel163.setToolTipText("");
         jLabel163.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        botonCrearTorneoSingle3.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 315, 200));
+        estado0.add(jLabel163, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 315, 200));
 
-        jPanel27.add(botonCrearTorneoSingle3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
+        jPanel27.add(estado0, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
 
         jLabel151.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel151.setForeground(new java.awt.Color(30, 25, 161));
@@ -1242,26 +1320,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel152.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel27.add(jLabel152, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 315, 200));
 
-        botonCrearTorneoSingle4.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        estado1.setBackground(new java.awt.Color(30, 25, 161));
+        estado1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseMoved(evt);
+                estado1MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle4.addMouseListener(new java.awt.event.MouseAdapter() {
+        estado1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseClicked(evt);
+                estado1MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle4MouseExited(evt);
+                estado1MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        estado1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel150.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel150.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel150.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel150.setText("ACTUALIZAR");
-        botonCrearTorneoSingle4.add(jLabel150, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        estado1.add(jLabel150, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel41.setBackground(new java.awt.Color(30, 25, 161));
         jPanel41.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1271,9 +1350,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel153.setText("CREAR TORNEO");
         jPanel41.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle4.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        estado1.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel27.add(botonCrearTorneoSingle4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
+        jPanel27.add(estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
 
         jLabel154.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel154.setForeground(new java.awt.Color(30, 25, 161));
@@ -1285,26 +1364,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel155.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel27.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 315, 200));
 
-        botonCrearTorneoSingle7.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle7.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        estado2.setBackground(new java.awt.Color(30, 25, 161));
+        estado2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseMoved(evt);
+                estado2MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle7.addMouseListener(new java.awt.event.MouseAdapter() {
+        estado2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseClicked(evt);
+                estado2MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle7MouseExited(evt);
+                estado2MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        estado2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel164.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel164.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel164.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel164.setText("ACTUALIZAR");
-        botonCrearTorneoSingle7.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        estado2.add(jLabel164, new org.netbeans.lib.awtextra.AbsoluteConstraints(13, 10, 110, -1));
 
         jPanel44.setBackground(new java.awt.Color(30, 25, 161));
         jPanel44.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1314,7 +1394,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel165.setText("CREAR TORNEO");
         jPanel44.add(jLabel165, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle7.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        estado2.add(jPanel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
         botonCrearTorneoSingle8.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoSingle8.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1347,17 +1427,17 @@ public class Menu extends javax.swing.JFrame {
 
         botonCrearTorneoSingle8.add(jPanel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        botonCrearTorneoSingle7.add(botonCrearTorneoSingle8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
+        estado2.add(botonCrearTorneoSingle8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 370, 130, 40));
 
         jLabel168.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel168.setForeground(new java.awt.Color(153, 153, 153));
         jLabel168.setText("0: NO DISPONIBLE");
-        botonCrearTorneoSingle7.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 60));
+        estado2.add(jLabel168, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, -1, 60));
 
         jLabel169.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jLabel169.setToolTipText("");
         jLabel169.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        botonCrearTorneoSingle7.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 315, 200));
+        estado2.add(jLabel169, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 315, 200));
 
         botonCrearTorneoSingle9.setBackground(new java.awt.Color(30, 25, 161));
         botonCrearTorneoSingle9.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -1390,19 +1470,19 @@ public class Menu extends javax.swing.JFrame {
 
         botonCrearTorneoSingle9.add(jPanel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        botonCrearTorneoSingle7.add(botonCrearTorneoSingle9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
+        estado2.add(botonCrearTorneoSingle9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 130, 40));
 
         jLabel172.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel172.setForeground(new java.awt.Color(153, 153, 153));
         jLabel172.setText("1: DISPONIBLE");
-        botonCrearTorneoSingle7.add(jLabel172, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, 60));
+        estado2.add(jLabel172, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, 60));
 
         jLabel173.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jLabel173.setToolTipText("");
         jLabel173.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        botonCrearTorneoSingle7.add(jLabel173, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 315, 200));
+        estado2.add(jLabel173, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, 315, 200));
 
-        jPanel27.add(botonCrearTorneoSingle7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, 130, 40));
+        jPanel27.add(estado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 580, 130, 40));
 
         jLabel174.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel174.setForeground(new java.awt.Color(30, 25, 161));
@@ -1414,26 +1494,27 @@ public class Menu extends javax.swing.JFrame {
         jLabel175.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel27.add(jLabel175, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 460, 315, 200));
 
-        botonCrearTorneoSingle10.setBackground(new java.awt.Color(30, 25, 161));
-        botonCrearTorneoSingle10.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+        estado3.setBackground(new java.awt.Color(30, 25, 161));
+        estado3.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle10MouseMoved(evt);
+                estado3MouseMoved(evt);
             }
         });
-        botonCrearTorneoSingle10.addMouseListener(new java.awt.event.MouseAdapter() {
+        estado3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle10MouseClicked(evt);
+                estado3MouseClicked(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                botonCrearTorneoSingle10MouseExited(evt);
+                estado3MouseExited(evt);
             }
         });
-        botonCrearTorneoSingle10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        estado3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel176.setFont(new java.awt.Font("Bebas Neue", 0, 20)); // NOI18N
         jLabel176.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel176.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel176.setText("ACTUALIZAR");
-        botonCrearTorneoSingle10.add(jLabel176, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        estado3.add(jLabel176, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 130, -1));
 
         jPanel47.setBackground(new java.awt.Color(30, 25, 161));
         jPanel47.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1443,9 +1524,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel177.setText("CREAR TORNEO");
         jPanel47.add(jLabel177, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        botonCrearTorneoSingle10.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
+        estado3.add(jPanel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, 130, 40));
 
-        jPanel27.add(botonCrearTorneoSingle10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 130, 40));
+        jPanel27.add(estado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 580, 130, 40));
 
         jLabel178.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel178.setForeground(new java.awt.Color(30, 25, 161));
@@ -1519,6 +1600,7 @@ public class Menu extends javax.swing.JFrame {
         botonBuscarJugador1.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         botonBuscarJugador1.setForeground(new java.awt.Color(255, 255, 255));
         botonBuscarJugador1.setText("REVISAR");
+        botonBuscarJugador1.setBorder(null);
         botonBuscarJugador1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 botonBuscarJugador1MouseMoved(evt);
@@ -3022,7 +3104,7 @@ public class Menu extends javax.swing.JFrame {
                 textoBuscarJugador5ActionPerformed(evt);
             }
         });
-        jPanel10.add(textoBuscarJugador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 620, 40));
+        jPanel10.add(textoBuscarJugador5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 630, 40));
 
         jSeparator51.setForeground(new java.awt.Color(0, 0, 0));
         jPanel10.add(jSeparator51, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 720, 10));
@@ -3032,38 +3114,38 @@ public class Menu extends javax.swing.JFrame {
         jLabel99.setText("ACTUALIZAR INFORMACIÓN DE UN VEHICULO...");
         jPanel10.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, -1, 60));
 
-        ingresarRondaEliminacionDirecta7.setBackground(new java.awt.Color(255, 255, 255));
-        ingresarRondaEliminacionDirecta7.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        ingresarRondaEliminacionDirecta7.setForeground(new java.awt.Color(153, 153, 153));
-        ingresarRondaEliminacionDirecta7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
-        ingresarRondaEliminacionDirecta7.setToolTipText("");
-        ingresarRondaEliminacionDirecta7.setBorder(null);
-        ingresarRondaEliminacionDirecta7.addActionListener(new java.awt.event.ActionListener() {
+        actualizarEstado.setBackground(new java.awt.Color(255, 255, 255));
+        actualizarEstado.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        actualizarEstado.setForeground(new java.awt.Color(153, 153, 153));
+        actualizarEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
+        actualizarEstado.setToolTipText("");
+        actualizarEstado.setBorder(null);
+        actualizarEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresarRondaEliminacionDirecta7ActionPerformed(evt);
+                actualizarEstadoActionPerformed(evt);
             }
         });
-        jPanel10.add(ingresarRondaEliminacionDirecta7, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 250, 30));
+        jPanel10.add(actualizarEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 370, 250, 30));
 
-        entradaCantidadJugadores6.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores6.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores6.setText("ACTUALIZAR KILOMETRAJE");
-        entradaCantidadJugadores6.setBorder(null);
-        entradaCantidadJugadores6.addFocusListener(new java.awt.event.FocusAdapter() {
+        actualizarKilometraje.setBackground(new java.awt.Color(255, 255, 255));
+        actualizarKilometraje.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        actualizarKilometraje.setForeground(new java.awt.Color(153, 153, 153));
+        actualizarKilometraje.setText("ACTUALIZAR KILOMETRAJE");
+        actualizarKilometraje.setBorder(null);
+        actualizarKilometraje.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores6FocusGained(evt);
+                actualizarKilometrajeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores6FocusLost(evt);
+                actualizarKilometrajeFocusLost(evt);
             }
         });
-        entradaCantidadJugadores6.addActionListener(new java.awt.event.ActionListener() {
+        actualizarKilometraje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores6ActionPerformed(evt);
+                actualizarKilometrajeActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCantidadJugadores6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 280, -1));
+        jPanel10.add(actualizarKilometraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 280, -1));
 
         jLabel45.setBackground(new java.awt.Color(51, 51, 51));
         jLabel45.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
@@ -3078,25 +3160,25 @@ public class Menu extends javax.swing.JFrame {
         jLabel93.setText("ESTADO DEL VEHICULO:");
         jPanel10.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 330, -1, 30));
 
-        entradaCantidadJugadores25.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores25.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores25.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores25.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
-        entradaCantidadJugadores25.setBorder(null);
-        entradaCantidadJugadores25.addFocusListener(new java.awt.event.FocusAdapter() {
+        actualizarRevision.setBackground(new java.awt.Color(255, 255, 255));
+        actualizarRevision.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        actualizarRevision.setForeground(new java.awt.Color(153, 153, 153));
+        actualizarRevision.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
+        actualizarRevision.setBorder(null);
+        actualizarRevision.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores25FocusGained(evt);
+                actualizarRevisionFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores25FocusLost(evt);
+                actualizarRevisionFocusLost(evt);
             }
         });
-        entradaCantidadJugadores25.addActionListener(new java.awt.event.ActionListener() {
+        actualizarRevision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores25ActionPerformed(evt);
+                actualizarRevisionActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCantidadJugadores25, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, -1));
+        jPanel10.add(actualizarRevision, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 280, -1));
 
         jLabel100.setBackground(new java.awt.Color(51, 51, 51));
         jLabel100.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3106,25 +3188,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator88.setForeground(new java.awt.Color(0, 0, 0));
         jPanel10.add(jSeparator88, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 520, 290, 10));
 
-        entradaCantidadJugadores29.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores29.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores29.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores29.setText("Ingresar el numero de placa (6-8 caracteres)");
-        entradaCantidadJugadores29.setBorder(null);
-        entradaCantidadJugadores29.addFocusListener(new java.awt.event.FocusAdapter() {
+        actualizarPlaca.setBackground(new java.awt.Color(255, 255, 255));
+        actualizarPlaca.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        actualizarPlaca.setForeground(new java.awt.Color(153, 153, 153));
+        actualizarPlaca.setText("Ingresar el numero de placa (6-8 caracteres)");
+        actualizarPlaca.setBorder(null);
+        actualizarPlaca.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores29FocusGained(evt);
+                actualizarPlacaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores29FocusLost(evt);
+                actualizarPlacaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores29.addActionListener(new java.awt.event.ActionListener() {
+        actualizarPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores29ActionPerformed(evt);
+                actualizarPlacaActionPerformed(evt);
             }
         });
-        jPanel10.add(entradaCantidadJugadores29, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 280, -1));
+        jPanel10.add(actualizarPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 280, -1));
 
         jLabel136.setBackground(new java.awt.Color(51, 51, 51));
         jLabel136.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -3180,7 +3262,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida4MouseClicked
 
     private void botonCrearCamionetaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearCamionetaMouseExited
-        // TODO add your handling code here:
+        changePanelColor(botonCrearCamioneta,30,25,161);
     }//GEN-LAST:event_botonCrearCamionetaMouseExited
 
     private void botonCrearCamionetaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearCamionetaMouseClicked
@@ -3188,11 +3270,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearCamionetaMouseClicked
 
     private void botonCrearCamionetaMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearCamionetaMouseMoved
-        // TODO add your handling code here:
+        changePanelColor(botonCrearCamioneta,204,204,255);
     }//GEN-LAST:event_botonCrearCamionetaMouseMoved
 
     private void botonCrearAutobusMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearAutobusMouseExited
-        // TODO add your handling code here:
+        changePanelColor(botonCrearAutobus,30,25,161);
     }//GEN-LAST:event_botonCrearAutobusMouseExited
 
     private void botonCrearAutobusMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearAutobusMouseClicked
@@ -3200,28 +3282,29 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearAutobusMouseClicked
 
     private void botonCrearAutobusMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearAutobusMouseMoved
-        // TODO add your handling code here:
+        changePanelColor(botonCrearAutobus,204,204,255);
     }//GEN-LAST:event_botonCrearAutobusMouseMoved
 
     private void botonBuscarJugadorMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseMoved
-
+        changeButtonColor(botonBuscarJugador,204,204,255);
     }//GEN-LAST:event_botonBuscarJugadorMouseMoved
 
     private void botonBuscarJugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseClicked
         Vehiculo vehiculo = encontrarVehiculoId(Integer.parseInt(textoBuscarVehiculo.getText()), this.listaVehiculo);
         vehiculo.mostrarInformacion(mostrarPlaca, modelo, marca, anio, costo, renta, kilometraje, estado, revision, codigo, extraUno, extraDos, extraTres);
+        vehiculo.mostrarExtra(jLabel34, jLabel41, jLabel47);
     }//GEN-LAST:event_botonBuscarJugadorMouseClicked
 
     private void botonBuscarJugadorMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugadorMouseExited
-
+        changeButtonColor(botonBuscarJugador,30,25,161);
     }//GEN-LAST:event_botonBuscarJugadorMouseExited
 
     private void textoBuscarVehiculoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoFocusGained
-
+        focusGained(textoBuscarVehiculo, "INGRESAR CODIGO O MODELO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoFocusGained
 
     private void textoBuscarVehiculoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoFocusLost
-
+        focusLost(textoBuscarVehiculo, "INGRESAR CODIGO O MODELO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoFocusLost
 
     private void textoBuscarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoActionPerformed
@@ -3277,7 +3360,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_codigoActionPerformed
 
     private void botonCrearTorneoSingle1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle1MouseMoved
-        // TODO add your handling code here:
+        changePanelColor(botonCrearTorneoSingle1,204,204,255);
     }//GEN-LAST:event_botonCrearTorneoSingle1MouseMoved
 
     private void botonCrearTorneoSingle1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle1MouseClicked
@@ -3285,11 +3368,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle1MouseClicked
 
     private void botonCrearTorneoSingle1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle1MouseExited
-        // TODO add your handling code here:
+        changePanelColor(botonCrearTorneoSingle1,30,25,161);
     }//GEN-LAST:event_botonCrearTorneoSingle1MouseExited
 
     private void botonCrearTorneoSingle2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle2MouseMoved
-        // TODO add your handling code here:
+        changePanelColor(botonCrearTorneoSingle2,204,204,255);
     }//GEN-LAST:event_botonCrearTorneoSingle2MouseMoved
 
     private void botonCrearTorneoSingle2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle2MouseClicked
@@ -3297,7 +3380,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCrearTorneoSingle2MouseClicked
 
     private void botonCrearTorneoSingle2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle2MouseExited
-        // TODO add your handling code here:
+        changePanelColor(botonCrearTorneoSingle2,30,25,161);
     }//GEN-LAST:event_botonCrearTorneoSingle2MouseExited
 
     private void botonMinimizar5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizar5MouseClicked
@@ -3332,31 +3415,31 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonCrearTorneoSingle6MouseExited
 
-    private void botonCrearTorneoSingle3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseMoved
+    private void estado0MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado0MouseMoved
+        changePanelColor(estado0,204,204,255);
+    }//GEN-LAST:event_estado0MouseMoved
 
-    private void botonCrearTorneoSingle3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseClicked
+    private void estado0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado0MouseClicked
         int posicion = encontrarPosicionVehiculoId(Integer.parseInt(textoBuscarVehiculoEstado.getText()), this.listaVehiculo);
         actualizarEstadoVehiculo(posicion, this.listaVehiculo, 0);
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseClicked
+    }//GEN-LAST:event_estado0MouseClicked
 
-    private void botonCrearTorneoSingle3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle3MouseExited
+    private void estado0MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado0MouseExited
+        changePanelColor(estado0,30,25,161);
+    }//GEN-LAST:event_estado0MouseExited
 
-    private void botonCrearTorneoSingle4MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseMoved
+    private void estado1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado1MouseMoved
+        changePanelColor(estado1,204,204,255);
+    }//GEN-LAST:event_estado1MouseMoved
 
-    private void botonCrearTorneoSingle4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseClicked
+    private void estado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado1MouseClicked
         int posicion = encontrarPosicionVehiculoId(Integer.parseInt(textoBuscarVehiculoEstado.getText()), this.listaVehiculo);
         actualizarEstadoVehiculo(posicion, this.listaVehiculo, 1);
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseClicked
+    }//GEN-LAST:event_estado1MouseClicked
 
-    private void botonCrearTorneoSingle4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle4MouseExited
+    private void estado1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado1MouseExited
+        changePanelColor(estado1,30,25,161);
+    }//GEN-LAST:event_estado1MouseExited
 
     private void botonCrearTorneoSingle8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle8MouseMoved
         // TODO add your handling code here:
@@ -3382,38 +3465,38 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonCrearTorneoSingle9MouseExited
 
-    private void botonCrearTorneoSingle7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseMoved
+    private void estado2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado2MouseMoved
+        changePanelColor(estado2,204,204,255);
+    }//GEN-LAST:event_estado2MouseMoved
 
-    private void botonCrearTorneoSingle7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseClicked
+    private void estado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado2MouseClicked
         int posicion = encontrarPosicionVehiculoId(Integer.parseInt(textoBuscarVehiculoEstado.getText()), this.listaVehiculo);
         actualizarEstadoVehiculo(posicion, this.listaVehiculo, 2);
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseClicked
+    }//GEN-LAST:event_estado2MouseClicked
 
-    private void botonCrearTorneoSingle7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle7MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle7MouseExited
+    private void estado2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado2MouseExited
+        changePanelColor(estado2,30,25,161);
+    }//GEN-LAST:event_estado2MouseExited
 
-    private void botonCrearTorneoSingle10MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle10MouseMoved
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle10MouseMoved
+    private void estado3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado3MouseMoved
+        changePanelColor(estado3,204,204,255);
+    }//GEN-LAST:event_estado3MouseMoved
 
-    private void botonCrearTorneoSingle10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle10MouseClicked
+    private void estado3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado3MouseClicked
         int posicion = encontrarPosicionVehiculoId(Integer.parseInt(textoBuscarVehiculoEstado.getText()), this.listaVehiculo);
         actualizarEstadoVehiculo(posicion, this.listaVehiculo, 3);
-    }//GEN-LAST:event_botonCrearTorneoSingle10MouseClicked
+    }//GEN-LAST:event_estado3MouseClicked
 
-    private void botonCrearTorneoSingle10MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonCrearTorneoSingle10MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonCrearTorneoSingle10MouseExited
+    private void estado3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_estado3MouseExited
+        changePanelColor(estado3,30,25,161);
+    }//GEN-LAST:event_estado3MouseExited
 
     private void textoBuscarVehiculoEstadoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoEstadoFocusGained
-        // TODO add your handling code here:
+        focusGained(textoBuscarVehiculoEstado, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoEstadoFocusGained
 
     private void textoBuscarVehiculoEstadoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoEstadoFocusLost
-        // TODO add your handling code here:
+        focusLost(textoBuscarVehiculoEstado, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoEstadoFocusLost
 
     private void textoBuscarVehiculoEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoEstadoActionPerformed
@@ -3429,7 +3512,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonSalida6MouseClicked
 
     private void botonBuscarJugador1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseMoved
-        // TODO add your handling code here:
+        changeButtonColor(botonBuscarJugador1,204,204,255);
     }//GEN-LAST:event_botonBuscarJugador1MouseMoved
 
     private void botonBuscarJugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseClicked
@@ -3438,7 +3521,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugador1MouseClicked
 
     private void botonBuscarJugador1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador1MouseExited
-        // TODO add your handling code here:
+        changeButtonColor(botonBuscarJugador1,30,25,161);
     }//GEN-LAST:event_botonBuscarJugador1MouseExited
 
     private void botonBuscarJugador1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarJugador1ActionPerformed
@@ -3446,11 +3529,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugador1ActionPerformed
 
     private void textoBuscarVehiculoMantenimientoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoMantenimientoFocusGained
-        // TODO add your handling code here:
+        focusGained(textoBuscarVehiculoMantenimiento, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoMantenimientoFocusGained
 
     private void textoBuscarVehiculoMantenimientoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoMantenimientoFocusLost
-        // TODO add your handling code here:
+        focusLost(textoBuscarVehiculoMantenimiento, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarVehiculoMantenimientoFocusLost
 
     private void textoBuscarVehiculoMantenimientoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarVehiculoMantenimientoActionPerformed
@@ -3584,7 +3667,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugador4MouseMoved
 
     private void botonBuscarJugador4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador4MouseClicked
-        // TODO add your handling code here:
+        Vehiculo vehiculo = encontrarVehiculoId(Integer.parseInt(textoBuscarJugador5.getText()), listaVehiculo);
+        vehiculo.actualizarVehiculo(actualizarKilometraje, actualizarRevision,  actualizarPlaca, actualizarEstado);
+        this.camionetaXML.actualizarCamioneta(vehiculo);
+        this.autobusXML.actualizarAutobusTuristico(vehiculo);
     }//GEN-LAST:event_botonBuscarJugador4MouseClicked
 
     private void botonBuscarJugador4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador4MouseExited
@@ -3596,56 +3682,56 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugador4ActionPerformed
 
     private void textoBuscarJugador5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugador5FocusGained
-        // TODO add your handling code here:
+        focusGained(textoBuscarJugador5, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarJugador5FocusGained
 
     private void textoBuscarJugador5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_textoBuscarJugador5FocusLost
-        // TODO add your handling code here:
+        focusLost(textoBuscarJugador5, "INGRESAR CODIGO DEL VEHICULO");
     }//GEN-LAST:event_textoBuscarJugador5FocusLost
 
     private void textoBuscarJugador5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoBuscarJugador5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textoBuscarJugador5ActionPerformed
 
-    private void ingresarRondaEliminacionDirecta7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta7ActionPerformed
+    private void actualizarEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirecta7ActionPerformed
+    }//GEN-LAST:event_actualizarEstadoActionPerformed
 
-    private void entradaCantidadJugadores6FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores6FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores6FocusGained
+    private void actualizarKilometrajeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarKilometrajeFocusGained
+        focusGained(actualizarKilometraje, "ACTUALIZAR KILOMETRAJE");
+    }//GEN-LAST:event_actualizarKilometrajeFocusGained
 
-    private void entradaCantidadJugadores6FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores6FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores6FocusLost
+    private void actualizarKilometrajeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarKilometrajeFocusLost
+        focusLost(actualizarKilometraje, "ACTUALIZAR KILOMETRAJE");
+    }//GEN-LAST:event_actualizarKilometrajeFocusLost
 
-    private void entradaCantidadJugadores6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores6ActionPerformed
+    private void actualizarKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarKilometrajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores6ActionPerformed
+    }//GEN-LAST:event_actualizarKilometrajeActionPerformed
 
-    private void entradaCantidadJugadores25FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores25FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores25FocusGained
+    private void actualizarRevisionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarRevisionFocusGained
+        focusGained(actualizarRevision, "Ingresar fecha de revisiÓn (dd-mm-YYYY)");
+    }//GEN-LAST:event_actualizarRevisionFocusGained
 
-    private void entradaCantidadJugadores25FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores25FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores25FocusLost
+    private void actualizarRevisionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarRevisionFocusLost
+        focusLost(actualizarRevision, "Ingresar fecha de revisiÓn (dd-mm-YYYY)");
+    }//GEN-LAST:event_actualizarRevisionFocusLost
 
-    private void entradaCantidadJugadores25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores25ActionPerformed
+    private void actualizarRevisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarRevisionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores25ActionPerformed
+    }//GEN-LAST:event_actualizarRevisionActionPerformed
 
-    private void entradaCantidadJugadores29FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores29FocusGained
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores29FocusGained
+    private void actualizarPlacaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarPlacaFocusGained
+        focusGained(actualizarPlaca, "Ingresar el numero de placa (6-8 caracteres)");
+    }//GEN-LAST:event_actualizarPlacaFocusGained
 
-    private void entradaCantidadJugadores29FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores29FocusLost
-        // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores29FocusLost
+    private void actualizarPlacaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_actualizarPlacaFocusLost
+        focusLost(actualizarPlaca, "Ingresar el numero de placa (6-8 caracteres)");
+    }//GEN-LAST:event_actualizarPlacaFocusLost
 
-    private void entradaCantidadJugadores29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores29ActionPerformed
+    private void actualizarPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarPlacaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores29ActionPerformed
+    }//GEN-LAST:event_actualizarPlacaActionPerformed
 
     private void botonMinimizar9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizar9MouseClicked
         this.setExtendedState(1);
@@ -4099,9 +4185,70 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_extraTresActionPerformed
 
+    private void jPanel5MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseMoved
+        changePanelColor(jPanel5,250,250,250);
+    }//GEN-LAST:event_jPanel5MouseMoved
+
+    private void jPanel6MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseMoved
+        changePanelColor(jPanel6,250,250,250);
+    }//GEN-LAST:event_jPanel6MouseMoved
+
+    private void jPanel7MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseMoved
+        changePanelColor(jPanel7,250,250,250);
+    }//GEN-LAST:event_jPanel7MouseMoved
+
+    private void jPanel8MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseMoved
+        changePanelColor(jPanel8,250,250,250);
+    }//GEN-LAST:event_jPanel8MouseMoved
+
+    private void jPanel3MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseMoved
+        changePanelColor(jPanel3,250,250,250);
+    }//GEN-LAST:event_jPanel3MouseMoved
+
+    private void jPanel5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseExited
+        changePanelColor(jPanel5,204,204,255);
+    }//GEN-LAST:event_jPanel5MouseExited
+
+    private void jPanel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel6MouseExited
+        changePanelColor(jPanel6,204,204,255);
+    }//GEN-LAST:event_jPanel6MouseExited
+
+    private void jPanel7MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel7MouseExited
+        changePanelColor(jPanel7,204,204,255);
+    }//GEN-LAST:event_jPanel7MouseExited
+
+    private void jPanel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel8MouseExited
+        changePanelColor(jPanel8,204,204,255);
+    }//GEN-LAST:event_jPanel8MouseExited
+
+    private void jPanel3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseExited
+        changePanelColor(jPanel3,204,204,255);
+    }//GEN-LAST:event_jPanel3MouseExited
+
+    private void botonActualizarVehiculoMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarVehiculoMouseMoved
+        changeButtonColor(botonActualizarVehiculo,204,204,255);
+    }//GEN-LAST:event_botonActualizarVehiculoMouseMoved
+
+    private void botonActualizarVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarVehiculoMouseClicked
+        pestania.setSelectedIndex(9);
+    }//GEN-LAST:event_botonActualizarVehiculoMouseClicked
+
+    private void botonActualizarVehiculoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarVehiculoMouseExited
+        changeButtonColor(botonActualizarVehiculo,30,25,161);
+    }//GEN-LAST:event_botonActualizarVehiculoMouseExited
+
+    private void botonActualizarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarVehiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonActualizarVehiculoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> actualizarEstado;
+    private javax.swing.JTextField actualizarKilometraje;
+    private javax.swing.JTextField actualizarPlaca;
+    private javax.swing.JTextField actualizarRevision;
     private javax.swing.JTextField anio;
     private javax.swing.JTextField aviso;
+    private javax.swing.JButton botonActualizarVehiculo;
     private javax.swing.JButton botonBuscarJugador;
     private javax.swing.JButton botonBuscarJugador1;
     private javax.swing.JButton botonBuscarJugador2;
@@ -4110,13 +4257,9 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel botonCrearAutobus;
     private javax.swing.JPanel botonCrearCamioneta;
     private javax.swing.JPanel botonCrearTorneoSingle1;
-    private javax.swing.JPanel botonCrearTorneoSingle10;
     private javax.swing.JPanel botonCrearTorneoSingle2;
-    private javax.swing.JPanel botonCrearTorneoSingle3;
-    private javax.swing.JPanel botonCrearTorneoSingle4;
     private javax.swing.JPanel botonCrearTorneoSingle5;
     private javax.swing.JPanel botonCrearTorneoSingle6;
-    private javax.swing.JPanel botonCrearTorneoSingle7;
     private javax.swing.JPanel botonCrearTorneoSingle8;
     private javax.swing.JPanel botonCrearTorneoSingle9;
     private javax.swing.JLabel botonMinimizar;
@@ -4174,15 +4317,15 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField entradaCamionetaPuertas;
     private javax.swing.JTextField entradaCamionetaRenta;
     private javax.swing.JTextField entradaCamionetaRevision;
-    private javax.swing.JTextField entradaCantidadJugadores25;
-    private javax.swing.JTextField entradaCantidadJugadores29;
-    private javax.swing.JTextField entradaCantidadJugadores6;
     private javax.swing.JTextField estado;
+    private javax.swing.JPanel estado0;
+    private javax.swing.JPanel estado1;
+    private javax.swing.JPanel estado2;
+    private javax.swing.JPanel estado3;
     private javax.swing.JTextField extra;
     private javax.swing.JTextField extraDos;
     private javax.swing.JTextField extraTres;
     private javax.swing.JTextField extraUno;
-    private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;
     private javax.swing.JLabel jLabel132;

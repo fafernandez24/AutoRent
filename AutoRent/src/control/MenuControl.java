@@ -4,10 +4,15 @@
  */
 package control;
 
+import java.awt.Color;
 import java.util.HashMap;
 import java.util.List;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 import model.Vehiculo;
 
 /**
@@ -15,6 +20,23 @@ import model.Vehiculo;
  * @author Freddy A. Fernández
  */
 public class MenuControl {
+    
+    public static void focusGained(JTextField dataEnter, String message){
+        if (dataEnter.getText().equals(message)) dataEnter.setText("");
+    }
+    
+    public static void focusLost(JTextField dataEnter, String message){
+        String id = dataEnter.getText();
+        if (id.trim().isEmpty()) dataEnter.setText(message);
+    }
+    
+    public static void changeButtonColor(JButton button, int r, int g, int b){
+        button.setBackground(new Color(r,g,b));
+    }
+    
+    public static void changePanelColor(JPanel panel, int r, int g, int b){
+        panel.setBackground(new Color(r,g,b));
+    }
     
     public static Vehiculo encontrarVehiculoId(int id, List<Vehiculo> listaVehiculo){
         for (int i = 0; listaVehiculo.size() >= i; i++){

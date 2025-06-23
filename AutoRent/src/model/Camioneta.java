@@ -172,5 +172,12 @@ public class Camioneta extends Vehiculo{
        extraTres.setText(String.valueOf(this.numeroPuertas));
     }
     
+    @Override
+    public void mostrarExtra(JLabel extraUno, JLabel extraDos, JLabel extraTres){
+        extraUno.setText("Número de Pasajeros");
+        extraDos.setText("Costo del pasaje");
+        extraTres.setText("Número de puertas");
+    }
+    
 }
 

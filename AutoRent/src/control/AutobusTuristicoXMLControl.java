@@ -9,16 +9,15 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import model.AutobusTuristico;
+import model.Vehiculo;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
-
 
 /**
  *
@@ -40,7 +39,6 @@ public class AutobusTuristicoXMLControl {
             throw e; 
         }
     }
-   
    
     private boolean updateDocument() {
         try (FileOutputStream file = new FileOutputStream(fileLocation)) {
@@ -95,9 +93,33 @@ public class AutobusTuristicoXMLControl {
         );
     }
     
+    private Element buscarElementoPorCodigo(Integer codigo) {
+        String codigoStr = Integer.toString(codigo);
+        List<Element> autobuses = this.root.getChildren("AutobusTuristico");
+        for (Element autobusElement : autobuses) {
+            if (codigoStr.equals(autobusElement.getChildText("codigoVehiculo"))) {
+                return autobusElement; 
+            }
+        }
+        return null; 
+    }
+    
     public boolean agregarAutobus(AutobusTuristico autobus) {
         root.addContent(AutobustoXmlElement(autobus));
         return updateDocument();
+    }
+    
+    public boolean actualizarAutobusTuristico(Vehiculo autobus) {
+        Element elementoActualizar = buscarElementoPorCodigo(autobus.getCodigoVehiculo());
+        if (elementoActualizar != null) {
+            elementoActualizar.getChild(String.valueOf(autobus.getKilometraje()));
+            elementoActualizar.getChild(String.valueOf(autobus.getFechaRevision()));
+            elementoActualizar.getChild(autobus.getNumeroPlaca());
+            elementoActualizar.getChild(String.valueOf(autobus.getEstado()));
+            return updateDocument();
+        }
+
+        return false;
     }
     
     public ArrayList<AutobusTuristico> todosLosAutobuses() {

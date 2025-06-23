@@ -10,15 +10,14 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
+import model.Vehiculo;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
-
 
 /**
  *
@@ -89,9 +88,33 @@ public class CamionetaXMLControl {
         );
     }
     
+    private Element buscarElementoPorCodigo(Integer codigo) {
+        String codigoStr = Integer.toString(codigo);
+        List<Element> camionetas = this.root.getChildren("Camioneta");
+        for (Element camionetaElement : camionetas) {
+            if (codigoStr.equals(camionetaElement.getChildText("codigoVehiculo"))) {
+                return camionetaElement; 
+            }
+        }
+        return null; 
+    }
+    
     public boolean agregarCamioneta(Camioneta camioneta) {
         root.addContent(CamionetatoXmlElement(camioneta));
         return updateDocument();
+    }
+    
+    public boolean actualizarCamioneta(Vehiculo camioneta) {
+        Element elementoActualizar = buscarElementoPorCodigo(camioneta.getCodigoVehiculo());
+        if (elementoActualizar != null) {
+            elementoActualizar.getChild(String.valueOf(camioneta.getKilometraje()));
+            elementoActualizar.getChild(String.valueOf(camioneta.getFechaRevision()));
+            elementoActualizar.getChild(camioneta.getNumeroPlaca());
+            elementoActualizar.getChild(String.valueOf(camioneta.getEstado()));
+            return updateDocument();
+        }
+
+        return false;
     }
     
     public ArrayList<Camioneta> todosLasCamionetas() {

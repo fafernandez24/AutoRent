@@ -215,4 +215,11 @@ public class AutobusTuristico extends Vehiculo{
         leerSanitario(sanitario);
     }
     
+    @Override
+    public void mostrarExtra(JLabel extraUno, JLabel extraDos, JLabel extraTres){
+        extraUno.setText("Nombre del chofer");
+        extraDos.setText("Lugar de encuentro");
+        extraTres.setText("Destino Final");
+    }
+    
 }

@@ -264,11 +264,19 @@ public abstract class Vehiculo {
         fechaRevision = LocalDate.of(anio, mes, dia);  
     }
     
+    public void actualizarVehiculo(JTextField kilometraje, JTextField revision, JTextField placa, JComboBox estado){
+        leerKilometrajeVehiculo(kilometraje);
+        leerFechaRevisionVehiculo(revision);
+        leerPlacaVehiculo(placa);  
+        leerEstadoVehiculo(estado);
+    }
+    
     // Metodos abstractos
     
     public abstract void mostrarInformacion(JTextField placa, JTextField modelo, JTextField marca, JTextField anioVehiculo, JTextField costoAdquisicion, JTextField precioRenta, JTextField kilometraje, JTextField estado, JTextField fechaRevision, JTextField codigo, JTextField extraUno, JTextField extraDos, JTextField extraTres);
     public abstract void precioDeRenta(float porcentaje);
     public abstract void precioDeRenta(float porcentaje, float seguro, float servicioExtra);
+    public abstract void mostrarExtra(JLabel extraUno, JLabel extraDos, JLabel extraTres);
     public abstract void determinarMantenimiento(JTextField aviso, JLabel modelo, JLabel kilometraje, JLabel revision);
      
 } 
