@@ -7,6 +7,7 @@ package model;
 import static control.ValidacionLibrary.validarNumeroEntero;
 import static control.ValidacionLibrary.validarNumeroFlotante;
 import java.time.LocalDate;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -129,69 +130,48 @@ public class AutobusTuristico extends Vehiculo{
     
     // Metodos leer
     
-    public void leerNombreChofer(){
-        do{
-            System.out.print("Ingresar el nombre del chofer del autobus: ");
-            nombreChofer = entrada.nextLine();
-            if (!validarNombreChofer()) System.out.println("ERROR. Ingresar un nombre valido");
-        } while (!validarNombreChofer());
+    public void leerNombreChofer(JTextField entrada){
+        nombreChofer = entrada.getText();
+        if (!validarNombreChofer()) entrada.setText("ERROR. Ingresar un nombre valido");
     }
     
-    public void leerDestinoInicial(){
-        System.out.print("Ingresar de donde sale el autobus: ");
-        destinoInicial = entrada.nextLine();
+    public void leerDestinoInicial(JTextField entrada){
+        destinoInicial = entrada.getText();
     }
     
-    public void leerDestinoFinal(){   
-        System.out.print("Ingresar a donde llega el autobus: ");
-        destinoFinal = entrada.nextLine();
+    public void leerDestinoFinal(JTextField entrada){   
+        destinoFinal = entrada.getText();
     }
     
-    public void leerTiempoRecorrido(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar el tiempo que dura el recorrido (en minutos): ");
-                numeroString = entrada.nextLine();
-                tiempoRecorrido = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero");
-            } finally {
-                if (tiempoRecorrido < 0) System.out.println("ERROR. Ingresar un numero mayor o igual 0");
-            }
-        } while (!validarNumeroEntero(numeroString));
+    public void leerTiempoRecorrido(JTextField entrada){
+        String numeroString;
+        try{
+            System.out.print("Ingresar el tiempo que dura el recorrido (en minutos): ");
+            numeroString = entrada.getText();
+            tiempoRecorrido = Integer.parseInt(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero");
+        } finally {
+            if (tiempoRecorrido < 0) entrada.setText("ERROR. Ingresar un numero mayor o igual 0");
+        }
     }
     
-    public void leerGastoGasolina(){
-        String numeroString = "";
-        do{
-            try{ 
-                System.out.print("Ingresar gasolina gastada en el recorrido (en litros): ");
-                numeroString = entrada.nextLine();
-                gastoGasolina = Float.parseFloat(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero o con decimales");
-            } finally {
-                if (gastoGasolina < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
-            }
-        } while (!validarNumeroFlotante(numeroString));
+    public void leerGastoGasolina(JTextField entrada){
+        String numeroString;
+        try{ 
+            System.out.print("Ingresar gasolina gastada en el recorrido (en litros): ");
+            numeroString = entrada.getText();
+            gastoGasolina = Float.parseFloat(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero o con decimales");
+        } finally {
+            if (gastoGasolina < 0) entrada.setText("ERROR. Ingresar un numero mayor o igual a 0");
+        }
     }
     
-    public void leerSanitario(){
-        String baño;
-        do{
-            System.out.print("Ingresar si el autobus tiene baño(s/n): ");
-            baño = entrada.nextLine().toLowerCase();
-            if (!"s".equals(baño) && !"n".equals(baño)){
-                System.out.println("ERROR. Ingresar s o n");
-            }
-            else if ("n".equals(baño)){
-                setSanitario(false);
-            }
-            else{
-                setSanitario(true);
-            }
-        } while (!"s".equals(baño) && !"n".equals(baño));
+    public void leerSanitario(JComboBox entrada){
+        String baño = entrada.getSelectedItem().toString();
+        sanitario = baño.equals("si");
     }
     
     // Metodos mostrar
@@ -213,29 +193,28 @@ public class AutobusTuristico extends Vehiculo{
         estado.setText(String.valueOf(this.estado));
         fechaRevision.setText(String.valueOf(this.fechaRevision));
         codigo.setText(String.valueOf(this.codigoVehiculo));
-         extraUno.setText(this.nombreChofer);
+        extraUno.setText(this.nombreChofer);
         extraDos.setText(this.destinoInicial);
         extraTres.setText(String.valueOf(this.destinoFinal));
     }
     
-    @Override
-    public void leerDatos(){   
-        leerCodigoVehiculo();
-        leerPlacaVehiculo();  
-        leerModeloVehiculo();
-        leerMarcaVehiculo();
-        leerCostoAdquisicionVehiculo();
-        leerPrecioRentaVehiculo();
-        leerAnioVehiculo();
-        leerKilometrajeVehiculo();
-        leerEstadoVehiculo();
-        leerFechaRevisionVehiculo();
-        leerNombreChofer();
-        leerDestinoInicial();
-        leerDestinoFinal();
-        leerTiempoRecorrido();
-        leerGastoGasolina();
-        leerSanitario();
+    public void leerDatos(JTextField codigo, JTextField placa, JTextField modelo, JTextField marca, JTextField costo, JTextField renta, JTextField anio, JTextField kilometraje, JComboBox estado, JTextField revision, JTextField chofer, JTextField destinoI, JTextField destinoF, JTextField tiempo, JTextField gasolina, JComboBox sanitario){   
+        leerCodigoVehiculo(codigo);
+        leerPlacaVehiculo(placa);  
+        leerModeloVehiculo(modelo);
+        leerMarcaVehiculo(marca);
+        leerCostoAdquisicionVehiculo(costo);
+        leerPrecioRentaVehiculo(renta);
+        leerAnioVehiculo(anio);
+        leerKilometrajeVehiculo(kilometraje);
+        leerEstadoVehiculo(estado);
+        leerFechaRevisionVehiculo(revision);
+        leerNombreChofer(chofer);
+        leerDestinoInicial(destinoI);
+        leerDestinoFinal(destinoF);
+        leerTiempoRecorrido(tiempo);
+        leerGastoGasolina(gasolina);
+        leerSanitario(sanitario);
     }
     
 }

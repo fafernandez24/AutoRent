@@ -4,7 +4,9 @@
  */
 package control;
 
+import java.util.HashMap;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import model.Vehiculo;
 
@@ -48,6 +50,13 @@ public class MenuControl {
         renta.setText(String.valueOf(vehiculo.get(posicion).getPrecioRenta()));
     }
     
-    
+    public static int capturarEstadoJComboBox(JComboBox comboBox){
+        HashMap<String, Integer> playOff = new HashMap<>();
+        playOff.put("0: NO DISPONIBLE", 0);
+        playOff.put("1: DISPONIBLE", 1);
+        playOff.put("2: EN RENTA", 2);
+        playOff.put("3: FUERA DE SERVICIO O RETIRADO", 3);
+        return playOff.get(comboBox.getSelectedItem().toString());
+    }
     
 }

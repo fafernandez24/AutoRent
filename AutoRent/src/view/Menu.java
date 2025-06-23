@@ -10,6 +10,8 @@ import static control.MenuControl.calcularRentaExtraVehiculo;
 import static control.MenuControl.encontrarPosicionVehiculoId;
 import static control.MenuControl.encontrarVehiculoId;
 import java.util.List;
+import model.AutobusTuristico;
+import model.Camioneta;
 import model.Vehiculo;
 
 /**
@@ -225,45 +227,45 @@ public class Menu extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jPanel12 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        entradaNombreTorneo1 = new javax.swing.JTextField();
+        entradaCamionetaCodigo = new javax.swing.JTextField();
         jLabel86 = new javax.swing.JLabel();
-        entradaCantidadJugadores3 = new javax.swing.JTextField();
+        entradaCamionetaModelo = new javax.swing.JTextField();
         jLabel20 = new javax.swing.JLabel();
         botonSeguirIngresarDatosTorneo1 = new javax.swing.JButton();
         botonRegresarIngresarDatosTorneo1 = new javax.swing.JButton();
-        ingresarRondaEliminacionDirecta4 = new javax.swing.JComboBox<>();
+        entradaCamionetaEstado = new javax.swing.JComboBox<>();
         jLabel21 = new javax.swing.JLabel();
-        entradaCantidadJugadores4 = new javax.swing.JTextField();
+        entradaCamionetaMarca = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
-        entradaCantidadJugadores5 = new javax.swing.JTextField();
+        entradaCamionetaCosto = new javax.swing.JTextField();
         jLabel44 = new javax.swing.JLabel();
         jSeparator56 = new javax.swing.JSeparator();
         jSeparator57 = new javax.swing.JSeparator();
         jSeparator58 = new javax.swing.JSeparator();
         jSeparator59 = new javax.swing.JSeparator();
         jLabel77 = new javax.swing.JLabel();
-        entradaNombreTorneo3 = new javax.swing.JTextField();
-        entradaCantidadJugadores9 = new javax.swing.JTextField();
+        entradaCamionetaRenta = new javax.swing.JTextField();
+        entradaCamionetaAnio = new javax.swing.JTextField();
         jLabel87 = new javax.swing.JLabel();
-        entradaCantidadJugadores10 = new javax.swing.JTextField();
+        entradaCamionetaKilometraje = new javax.swing.JTextField();
         jLabel89 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
         jSeparator61 = new javax.swing.JSeparator();
         jSeparator62 = new javax.swing.JSeparator();
         jSeparator63 = new javax.swing.JSeparator();
-        entradaCantidadJugadores12 = new javax.swing.JTextField();
+        entradaCamionetaRevision = new javax.swing.JTextField();
         jLabel96 = new javax.swing.JLabel();
         jSeparator64 = new javax.swing.JSeparator();
-        entradaCantidadJugadores13 = new javax.swing.JTextField();
+        entradaCamionetaPlaca = new javax.swing.JTextField();
         jLabel134 = new javax.swing.JLabel();
         jSeparator65 = new javax.swing.JSeparator();
-        entradaCantidadJugadores14 = new javax.swing.JTextField();
+        entradaCamionetaAsientos = new javax.swing.JTextField();
         jLabel98 = new javax.swing.JLabel();
         jSeparator66 = new javax.swing.JSeparator();
-        entradaCantidadJugadores15 = new javax.swing.JTextField();
+        entradaCamionetaPasaje = new javax.swing.JTextField();
         jLabel183 = new javax.swing.JLabel();
         jSeparator67 = new javax.swing.JSeparator();
-        entradaCantidadJugadores16 = new javax.swing.JTextField();
+        entradaCamionetaPuertas = new javax.swing.JTextField();
         jLabel192 = new javax.swing.JLabel();
         jSeparator70 = new javax.swing.JSeparator();
         jSeparator69 = new javax.swing.JSeparator();
@@ -273,55 +275,55 @@ public class Menu extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jPanel16 = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
-        entradaNombreTorneo4 = new javax.swing.JTextField();
+        entradaAutobusCodigo = new javax.swing.JTextField();
         jLabel193 = new javax.swing.JLabel();
-        entradaCantidadJugadores11 = new javax.swing.JTextField();
+        entradaAutobusModelo = new javax.swing.JTextField();
         jLabel29 = new javax.swing.JLabel();
         botonSeguirIngresarDatosTorneo2 = new javax.swing.JButton();
         botonRegresarIngresarDatosTorneo2 = new javax.swing.JButton();
-        ingresarRondaEliminacionDirecta5 = new javax.swing.JComboBox<>();
-        entradaCantidadJugadores17 = new javax.swing.JTextField();
+        entradaAutobusBanio = new javax.swing.JComboBox<>();
+        entradaAutobusMarca = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        entradaCantidadJugadores18 = new javax.swing.JTextField();
+        entradaAutobusCosto = new javax.swing.JTextField();
         jLabel194 = new javax.swing.JLabel();
         jSeparator60 = new javax.swing.JSeparator();
         jSeparator71 = new javax.swing.JSeparator();
         jSeparator72 = new javax.swing.JSeparator();
         jSeparator73 = new javax.swing.JSeparator();
         jLabel195 = new javax.swing.JLabel();
-        entradaNombreTorneo5 = new javax.swing.JTextField();
-        entradaCantidadJugadores19 = new javax.swing.JTextField();
+        entradaAutobusRenta = new javax.swing.JTextField();
+        entradaAutobusAnio = new javax.swing.JTextField();
         jLabel196 = new javax.swing.JLabel();
-        entradaCantidadJugadores20 = new javax.swing.JTextField();
+        entradaAutobusKilometraje = new javax.swing.JTextField();
         jLabel197 = new javax.swing.JLabel();
         jLabel198 = new javax.swing.JLabel();
         jSeparator74 = new javax.swing.JSeparator();
         jSeparator75 = new javax.swing.JSeparator();
         jSeparator76 = new javax.swing.JSeparator();
-        entradaCantidadJugadores21 = new javax.swing.JTextField();
+        entradaAutobusRevision = new javax.swing.JTextField();
         jLabel199 = new javax.swing.JLabel();
         jSeparator77 = new javax.swing.JSeparator();
-        entradaCantidadJugadores22 = new javax.swing.JTextField();
+        entradaAutobusPlaca = new javax.swing.JTextField();
         jLabel200 = new javax.swing.JLabel();
         jSeparator78 = new javax.swing.JSeparator();
-        entradaCantidadJugadores23 = new javax.swing.JTextField();
+        entradaAutobusChofer = new javax.swing.JTextField();
         jLabel202 = new javax.swing.JLabel();
         jSeparator79 = new javax.swing.JSeparator();
-        entradaCantidadJugadores24 = new javax.swing.JTextField();
+        entradaAutobusDestinoI = new javax.swing.JTextField();
         jLabel203 = new javax.swing.JLabel();
         jSeparator80 = new javax.swing.JSeparator();
         jSeparator81 = new javax.swing.JSeparator();
-        entradaCantidadJugadores26 = new javax.swing.JTextField();
+        entradaAutobusDestinoF = new javax.swing.JTextField();
         jLabel208 = new javax.swing.JLabel();
         jSeparator83 = new javax.swing.JSeparator();
-        entradaCantidadJugadores27 = new javax.swing.JTextField();
+        entradaAutobusTiempo = new javax.swing.JTextField();
         jLabel217 = new javax.swing.JLabel();
         jSeparator84 = new javax.swing.JSeparator();
-        entradaCantidadJugadores28 = new javax.swing.JTextField();
+        entradaAutobusGasolina = new javax.swing.JTextField();
         jLabel218 = new javax.swing.JLabel();
         jSeparator85 = new javax.swing.JSeparator();
         jLabel219 = new javax.swing.JLabel();
-        ingresarRondaEliminacionDirecta6 = new javax.swing.JComboBox<>();
+        entradaAutobusEstado = new javax.swing.JComboBox<>();
         botonMinimizar8 = new javax.swing.JLabel();
         botonSalida8 = new javax.swing.JLabel();
         jPanel32 = new javax.swing.JPanel();
@@ -409,7 +411,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel1.setText("Determinar mantenimiento");
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 230, 50));
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 360, 50));
+        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 360, 50));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -424,7 +426,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setText("agregar vehiculo");
         jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 50));
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 360, 50));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 360, 50));
 
         jPanel6.setBackground(new java.awt.Color(204, 204, 255));
         jPanel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -439,7 +441,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setText("BUSCAR vehiculo");
         jPanel6.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 50));
 
-        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 360, 50));
+        jPanel4.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 360, 50));
 
         jPanel7.setBackground(new java.awt.Color(204, 204, 255));
         jPanel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -454,7 +456,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel5.setText("CALCULAR PRECIO DE RENTA");
         jPanel7.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 210, 50));
 
-        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 360, 50));
+        jPanel4.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 360, 50));
 
         jPanel8.setBackground(new java.awt.Color(204, 204, 255));
         jPanel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -469,9 +471,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel6.setText("Actualizar estado");
         jPanel8.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 160, 50));
 
-        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 360, 50));
+        jPanel4.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 360, 50));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/banner.jpg"))); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bannerAzul.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         jLabel2.setToolTipText("");
         jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 730));
@@ -595,16 +598,17 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel25.add(botonSalida4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 0, 20, 40));
 
-        jLabel95.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cancha_tenis.jpg"))); // NOI18N
+        jLabel95.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/camioneta.jpg"))); // NOI18N
         jLabel95.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel25.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, 150));
 
         jLabel185.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel25.add(jLabel185, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 315, 389));
 
-        jLabel186.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/djocovik celebrando.jpg"))); // NOI18N
-        jLabel186.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel25.add(jLabel186, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 230, 150));
+        jLabel186.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel186.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/autobusturistico.jpg"))); // NOI18N
+        jLabel186.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jPanel25.add(jLabel186, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 230, 140));
 
         jLabel191.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel25.add(jLabel191, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 315, 389));
@@ -961,7 +965,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel26.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, -1, -1));
 
-        jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/TrofeoUSOpen.jpg"))); // NOI18N
+        jLabel85.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rentaBasica.jpg"))); // NOI18N
         jLabel85.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel26.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 230, 150));
 
@@ -1017,8 +1021,8 @@ public class Menu extends javax.swing.JFrame {
         jLabel141.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/tarjeta.png"))); // NOI18N
         jPanel26.add(jLabel141, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 315, 389));
 
-        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/djocovikReves.jpeg"))); // NOI18N
-        jLabel94.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel94.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel94.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/rentaExtra.jpg"))); // NOI18N
         jPanel26.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 240, 230, 150));
 
         botonCrearTorneoSingle2.setBackground(new java.awt.Color(30, 25, 161));
@@ -1675,50 +1679,50 @@ public class Menu extends javax.swing.JFrame {
         jLabel15.setText("codigo de la camioneta:");
         jPanel12.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaNombreTorneo1.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo1.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo1.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreTorneo1.setText("ingresar codigo");
-        entradaNombreTorneo1.setBorder(null);
-        entradaNombreTorneo1.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaCodigo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaCodigo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaCodigo.setText("ingresar codigo");
+        entradaCamionetaCodigo.setBorder(null);
+        entradaCamionetaCodigo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo1FocusGained(evt);
+                entradaCamionetaCodigoFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo1FocusLost(evt);
+                entradaCamionetaCodigoFocusLost(evt);
             }
         });
-        entradaNombreTorneo1.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo1ActionPerformed(evt);
+                entradaCamionetaCodigoActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        jPanel12.add(entradaCamionetaCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         jLabel86.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel86.setForeground(new java.awt.Color(36, 20, 188));
         jLabel86.setText("Ingresar datos de LA CAMIONETA...");
         jPanel12.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, 60));
 
-        entradaCantidadJugadores3.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores3.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores3.setText("Ingresar modelo de la camioneta");
-        entradaCantidadJugadores3.setBorder(null);
-        entradaCantidadJugadores3.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaModelo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaModelo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaModelo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaModelo.setText("Ingresar modelo de la camioneta");
+        entradaCamionetaModelo.setBorder(null);
+        entradaCamionetaModelo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores3FocusGained(evt);
+                entradaCamionetaModeloFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores3FocusLost(evt);
+                entradaCamionetaModeloFocusLost(evt);
             }
         });
-        entradaCantidadJugadores3.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores3ActionPerformed(evt);
+                entradaCamionetaModeloActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 260, -1));
+        jPanel12.add(entradaCamionetaModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 260, -1));
 
         jLabel20.setBackground(new java.awt.Color(51, 51, 51));
         jLabel20.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -1773,68 +1777,68 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel12.add(botonRegresarIngresarDatosTorneo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 140, 40));
 
-        ingresarRondaEliminacionDirecta4.setBackground(new java.awt.Color(255, 255, 255));
-        ingresarRondaEliminacionDirecta4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        ingresarRondaEliminacionDirecta4.setForeground(new java.awt.Color(153, 153, 153));
-        ingresarRondaEliminacionDirecta4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
-        ingresarRondaEliminacionDirecta4.setToolTipText("");
-        ingresarRondaEliminacionDirecta4.setBorder(null);
-        ingresarRondaEliminacionDirecta4.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaEstado.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaEstado.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaEstado.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
+        entradaCamionetaEstado.setToolTipText("");
+        entradaCamionetaEstado.setBorder(null);
+        entradaCamionetaEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresarRondaEliminacionDirecta4ActionPerformed(evt);
+                entradaCamionetaEstadoActionPerformed(evt);
             }
         });
-        jPanel12.add(ingresarRondaEliminacionDirecta4, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 250, 30));
+        jPanel12.add(entradaCamionetaEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 250, 30));
 
         jLabel21.setBackground(new java.awt.Color(51, 51, 51));
         jLabel21.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel21.setText("modelo de la camioneta");
         jPanel12.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, -1, 30));
 
-        entradaCantidadJugadores4.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores4.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores4.setText("Ingresar marca de la camioneta");
-        entradaCantidadJugadores4.setBorder(null);
-        entradaCantidadJugadores4.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaMarca.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaMarca.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaMarca.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaMarca.setText("Ingresar marca de la camioneta");
+        entradaCamionetaMarca.setBorder(null);
+        entradaCamionetaMarca.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores4FocusGained(evt);
+                entradaCamionetaMarcaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores4FocusLost(evt);
+                entradaCamionetaMarcaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores4.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores4ActionPerformed(evt);
+                entradaCamionetaMarcaActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 280, -1));
+        jPanel12.add(entradaCamionetaMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 280, -1));
 
         jLabel22.setBackground(new java.awt.Color(51, 51, 51));
         jLabel22.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel22.setText("marca de la camioneta");
         jPanel12.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
 
-        entradaCantidadJugadores5.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores5.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores5.setText("Ingresar costo de adqusición");
-        entradaCantidadJugadores5.setBorder(null);
-        entradaCantidadJugadores5.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaCosto.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaCosto.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaCosto.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaCosto.setText("Ingresar costo de adqusición");
+        entradaCamionetaCosto.setBorder(null);
+        entradaCamionetaCosto.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores5FocusGained(evt);
+                entradaCamionetaCostoFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores5FocusLost(evt);
+                entradaCamionetaCostoFocusLost(evt);
             }
         });
-        entradaCantidadJugadores5.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores5ActionPerformed(evt);
+                entradaCamionetaCostoActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 280, -1));
+        jPanel12.add(entradaCamionetaCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 280, -1));
 
         jLabel44.setBackground(new java.awt.Color(51, 51, 51));
         jLabel44.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -1858,70 +1862,70 @@ public class Menu extends javax.swing.JFrame {
         jLabel77.setText("precio de renta:");
         jPanel12.add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, 30));
 
-        entradaNombreTorneo3.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo3.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo3.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreTorneo3.setText("Ingresar precio de renta");
-        entradaNombreTorneo3.setBorder(null);
-        entradaNombreTorneo3.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaRenta.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaRenta.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaRenta.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaRenta.setText("Ingresar precio de renta");
+        entradaCamionetaRenta.setBorder(null);
+        entradaCamionetaRenta.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo3FocusGained(evt);
+                entradaCamionetaRentaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo3FocusLost(evt);
+                entradaCamionetaRentaFocusLost(evt);
             }
         });
-        entradaNombreTorneo3.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaRenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo3ActionPerformed(evt);
+                entradaCamionetaRentaActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaNombreTorneo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        jPanel12.add(entradaCamionetaRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
-        entradaCantidadJugadores9.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores9.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores9.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores9.setText("Ingresar año de la camioneta (1885-2030)");
-        entradaCantidadJugadores9.setBorder(null);
-        entradaCantidadJugadores9.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaAnio.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaAnio.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaAnio.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaAnio.setText("Ingresar año de la camioneta (1885-2030)");
+        entradaCamionetaAnio.setBorder(null);
+        entradaCamionetaAnio.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores9FocusGained(evt);
+                entradaCamionetaAnioFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores9FocusLost(evt);
+                entradaCamionetaAnioFocusLost(evt);
             }
         });
-        entradaCantidadJugadores9.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores9ActionPerformed(evt);
+                entradaCamionetaAnioActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores9, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 260, -1));
+        jPanel12.add(entradaCamionetaAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 260, -1));
 
         jLabel87.setBackground(new java.awt.Color(51, 51, 51));
         jLabel87.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel87.setText("año del vehiculo:");
         jPanel12.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, 30));
 
-        entradaCantidadJugadores10.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores10.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores10.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores10.setText("Ingresar kilometraje del vehiculo");
-        entradaCantidadJugadores10.setBorder(null);
-        entradaCantidadJugadores10.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaKilometraje.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaKilometraje.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaKilometraje.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaKilometraje.setText("Ingresar kilometraje del vehiculo");
+        entradaCamionetaKilometraje.setBorder(null);
+        entradaCamionetaKilometraje.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores10FocusGained(evt);
+                entradaCamionetaKilometrajeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores10FocusLost(evt);
+                entradaCamionetaKilometrajeFocusLost(evt);
             }
         });
-        entradaCantidadJugadores10.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaKilometraje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores10ActionPerformed(evt);
+                entradaCamionetaKilometrajeActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 280, -1));
+        jPanel12.add(entradaCamionetaKilometraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 280, -1));
 
         jLabel89.setBackground(new java.awt.Color(51, 51, 51));
         jLabel89.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -1942,25 +1946,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator63.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.add(jSeparator63, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 260, 10));
 
-        entradaCantidadJugadores12.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores12.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores12.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores12.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
-        entradaCantidadJugadores12.setBorder(null);
-        entradaCantidadJugadores12.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaRevision.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaRevision.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaRevision.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaRevision.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
+        entradaCamionetaRevision.setBorder(null);
+        entradaCamionetaRevision.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores12FocusGained(evt);
+                entradaCamionetaRevisionFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores12FocusLost(evt);
+                entradaCamionetaRevisionFocusLost(evt);
             }
         });
-        entradaCantidadJugadores12.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaRevision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores12ActionPerformed(evt);
+                entradaCamionetaRevisionActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores12, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 700, 280, -1));
+        jPanel12.add(entradaCamionetaRevision, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 700, 280, -1));
 
         jLabel96.setBackground(new java.awt.Color(51, 51, 51));
         jLabel96.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -1970,25 +1974,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator64.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.add(jSeparator64, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 730, 290, 10));
 
-        entradaCantidadJugadores13.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores13.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores13.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores13.setText("Ingresar el numero de placa (6-8 caracteres)");
-        entradaCantidadJugadores13.setBorder(null);
-        entradaCantidadJugadores13.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaPlaca.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaPlaca.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaPlaca.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaPlaca.setText("Ingresar el numero de placa (6-8 caracteres)");
+        entradaCamionetaPlaca.setBorder(null);
+        entradaCamionetaPlaca.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores13FocusGained(evt);
+                entradaCamionetaPlacaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores13FocusLost(evt);
+                entradaCamionetaPlacaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores13.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores13ActionPerformed(evt);
+                entradaCamionetaPlacaActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 280, -1));
+        jPanel12.add(entradaCamionetaPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 280, -1));
 
         jLabel134.setBackground(new java.awt.Color(51, 51, 51));
         jLabel134.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -1998,25 +2002,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator65.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.add(jSeparator65, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 260, 10));
 
-        entradaCantidadJugadores14.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores14.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores14.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores14.setText("Ingresar el numero de asientos (1-100)");
-        entradaCantidadJugadores14.setBorder(null);
-        entradaCantidadJugadores14.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaAsientos.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaAsientos.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaAsientos.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaAsientos.setText("Ingresar el numero de asientos (1-100)");
+        entradaCamionetaAsientos.setBorder(null);
+        entradaCamionetaAsientos.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores14FocusGained(evt);
+                entradaCamionetaAsientosFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores14FocusLost(evt);
+                entradaCamionetaAsientosFocusLost(evt);
             }
         });
-        entradaCantidadJugadores14.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaAsientos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores14ActionPerformed(evt);
+                entradaCamionetaAsientosActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores14, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 280, -1));
+        jPanel12.add(entradaCamionetaAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 280, -1));
 
         jLabel98.setBackground(new java.awt.Color(51, 51, 51));
         jLabel98.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2026,25 +2030,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator66.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.add(jSeparator66, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 850, 260, 10));
 
-        entradaCantidadJugadores15.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores15.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores15.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores15.setText("Ingresar el costo del pasaje del vehiculo");
-        entradaCantidadJugadores15.setBorder(null);
-        entradaCantidadJugadores15.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaPasaje.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaPasaje.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaPasaje.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaPasaje.setText("Ingresar el costo del pasaje del vehiculo");
+        entradaCamionetaPasaje.setBorder(null);
+        entradaCamionetaPasaje.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores15FocusGained(evt);
+                entradaCamionetaPasajeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores15FocusLost(evt);
+                entradaCamionetaPasajeFocusLost(evt);
             }
         });
-        entradaCantidadJugadores15.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaPasaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores15ActionPerformed(evt);
+                entradaCamionetaPasajeActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores15, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 820, 280, -1));
+        jPanel12.add(entradaCamionetaPasaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 820, 280, -1));
 
         jLabel183.setBackground(new java.awt.Color(51, 51, 51));
         jLabel183.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2054,25 +2058,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator67.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.add(jSeparator67, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 850, 260, 10));
 
-        entradaCantidadJugadores16.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores16.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores16.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores16.setText("Ingresar el nÚmero de puertas (1-8)");
-        entradaCantidadJugadores16.setBorder(null);
-        entradaCantidadJugadores16.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaCamionetaPuertas.setBackground(new java.awt.Color(255, 255, 255));
+        entradaCamionetaPuertas.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaCamionetaPuertas.setForeground(new java.awt.Color(153, 153, 153));
+        entradaCamionetaPuertas.setText("Ingresar el nÚmero de puertas (1-8)");
+        entradaCamionetaPuertas.setBorder(null);
+        entradaCamionetaPuertas.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores16FocusGained(evt);
+                entradaCamionetaPuertasFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores16FocusLost(evt);
+                entradaCamionetaPuertasFocusLost(evt);
             }
         });
-        entradaCantidadJugadores16.addActionListener(new java.awt.event.ActionListener() {
+        entradaCamionetaPuertas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores16ActionPerformed(evt);
+                entradaCamionetaPuertasActionPerformed(evt);
             }
         });
-        jPanel12.add(entradaCantidadJugadores16, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 940, 280, -1));
+        jPanel12.add(entradaCamionetaPuertas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 940, 280, -1));
 
         jLabel192.setBackground(new java.awt.Color(51, 51, 51));
         jLabel192.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2128,50 +2132,50 @@ public class Menu extends javax.swing.JFrame {
         jLabel28.setText("codigo del AUTOBUS TURISTICO:");
         jPanel16.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, 30));
 
-        entradaNombreTorneo4.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo4.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo4.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreTorneo4.setText("ingresar codigo");
-        entradaNombreTorneo4.setBorder(null);
-        entradaNombreTorneo4.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusCodigo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusCodigo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusCodigo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusCodigo.setText("ingresar codigo");
+        entradaAutobusCodigo.setBorder(null);
+        entradaAutobusCodigo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo4FocusGained(evt);
+                entradaAutobusCodigoFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo4FocusLost(evt);
+                entradaAutobusCodigoFocusLost(evt);
             }
         });
-        entradaNombreTorneo4.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo4ActionPerformed(evt);
+                entradaAutobusCodigoActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaNombreTorneo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
+        jPanel16.add(entradaAutobusCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, -1, -1));
 
         jLabel193.setFont(new java.awt.Font("Bebas Neue", 0, 36)); // NOI18N
         jLabel193.setForeground(new java.awt.Color(36, 20, 188));
         jLabel193.setText("Ingresar datos deL AUTOBUS TURISTICO...");
         jPanel16.add(jLabel193, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, 60));
 
-        entradaCantidadJugadores11.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores11.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores11.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores11.setText("Ingresar modelo deL AUTOBUS TURISTICO");
-        entradaCantidadJugadores11.setBorder(null);
-        entradaCantidadJugadores11.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusModelo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusModelo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusModelo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusModelo.setText("Ingresar modelo deL AUTOBUS TURISTICO");
+        entradaAutobusModelo.setBorder(null);
+        entradaAutobusModelo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores11FocusGained(evt);
+                entradaAutobusModeloFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores11FocusLost(evt);
+                entradaAutobusModeloFocusLost(evt);
             }
         });
-        entradaCantidadJugadores11.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusModelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores11ActionPerformed(evt);
+                entradaAutobusModeloActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 260, -1));
+        jPanel16.add(entradaAutobusModelo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 260, -1));
 
         jLabel29.setBackground(new java.awt.Color(51, 51, 51));
         jLabel29.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2226,63 +2230,63 @@ public class Menu extends javax.swing.JFrame {
         });
         jPanel16.add(botonRegresarIngresarDatosTorneo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1190, 140, 40));
 
-        ingresarRondaEliminacionDirecta5.setBackground(new java.awt.Color(255, 255, 255));
-        ingresarRondaEliminacionDirecta5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        ingresarRondaEliminacionDirecta5.setForeground(new java.awt.Color(153, 153, 153));
-        ingresarRondaEliminacionDirecta5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
-        ingresarRondaEliminacionDirecta5.setToolTipText("");
-        ingresarRondaEliminacionDirecta5.setBorder(null);
-        ingresarRondaEliminacionDirecta5.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusBanio.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusBanio.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusBanio.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusBanio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SI", "NO" }));
+        entradaAutobusBanio.setToolTipText("");
+        entradaAutobusBanio.setBorder(null);
+        entradaAutobusBanio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresarRondaEliminacionDirecta5ActionPerformed(evt);
+                entradaAutobusBanioActionPerformed(evt);
             }
         });
-        jPanel16.add(ingresarRondaEliminacionDirecta5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 1050, 250, 30));
+        jPanel16.add(entradaAutobusBanio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 1050, 250, 30));
 
-        entradaCantidadJugadores17.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores17.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores17.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores17.setText("Ingresar marca deL AUTOBUS");
-        entradaCantidadJugadores17.setBorder(null);
-        entradaCantidadJugadores17.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusMarca.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusMarca.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusMarca.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusMarca.setText("Ingresar marca deL AUTOBUS");
+        entradaAutobusMarca.setBorder(null);
+        entradaAutobusMarca.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores17FocusGained(evt);
+                entradaAutobusMarcaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores17FocusLost(evt);
+                entradaAutobusMarcaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores17.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusMarca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores17ActionPerformed(evt);
+                entradaAutobusMarcaActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores17, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 280, -1));
+        jPanel16.add(entradaAutobusMarca, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, 280, -1));
 
         jLabel31.setBackground(new java.awt.Color(51, 51, 51));
         jLabel31.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel31.setText("marca deL AUTOBUS:");
         jPanel16.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, 30));
 
-        entradaCantidadJugadores18.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores18.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores18.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores18.setText("Ingresar costo de adqusición");
-        entradaCantidadJugadores18.setBorder(null);
-        entradaCantidadJugadores18.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusCosto.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusCosto.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusCosto.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusCosto.setText("Ingresar costo de adqusición");
+        entradaAutobusCosto.setBorder(null);
+        entradaAutobusCosto.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores18FocusGained(evt);
+                entradaAutobusCostoFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores18FocusLost(evt);
+                entradaAutobusCostoFocusLost(evt);
             }
         });
-        entradaCantidadJugadores18.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusCosto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores18ActionPerformed(evt);
+                entradaAutobusCostoActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores18, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 280, -1));
+        jPanel16.add(entradaAutobusCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, 280, -1));
 
         jLabel194.setBackground(new java.awt.Color(51, 51, 51));
         jLabel194.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2306,70 +2310,70 @@ public class Menu extends javax.swing.JFrame {
         jLabel195.setText("precio de renta:");
         jPanel16.add(jLabel195, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 220, -1, 30));
 
-        entradaNombreTorneo5.setBackground(new java.awt.Color(255, 255, 255));
-        entradaNombreTorneo5.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaNombreTorneo5.setForeground(new java.awt.Color(153, 153, 153));
-        entradaNombreTorneo5.setText("Ingresar precio de renta");
-        entradaNombreTorneo5.setBorder(null);
-        entradaNombreTorneo5.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusRenta.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusRenta.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusRenta.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusRenta.setText("Ingresar precio de renta");
+        entradaAutobusRenta.setBorder(null);
+        entradaAutobusRenta.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo5FocusGained(evt);
+                entradaAutobusRentaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaNombreTorneo5FocusLost(evt);
+                entradaAutobusRentaFocusLost(evt);
             }
         });
-        entradaNombreTorneo5.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusRenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaNombreTorneo5ActionPerformed(evt);
+                entradaAutobusRentaActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaNombreTorneo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
+        jPanel16.add(entradaAutobusRenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, -1, -1));
 
-        entradaCantidadJugadores19.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores19.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores19.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores19.setText("Ingresar año deL VEHICULO (1885-2030)");
-        entradaCantidadJugadores19.setBorder(null);
-        entradaCantidadJugadores19.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusAnio.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusAnio.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusAnio.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusAnio.setText("Ingresar año deL VEHICULO (1885-2030)");
+        entradaAutobusAnio.setBorder(null);
+        entradaAutobusAnio.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores19FocusGained(evt);
+                entradaAutobusAnioFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores19FocusLost(evt);
+                entradaAutobusAnioFocusLost(evt);
             }
         });
-        entradaCantidadJugadores19.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusAnio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores19ActionPerformed(evt);
+                entradaAutobusAnioActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores19, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 260, -1));
+        jPanel16.add(entradaAutobusAnio, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 360, 260, -1));
 
         jLabel196.setBackground(new java.awt.Color(51, 51, 51));
         jLabel196.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
         jLabel196.setText("año del AUTOBUS:");
         jPanel16.add(jLabel196, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, -1, 30));
 
-        entradaCantidadJugadores20.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores20.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores20.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores20.setText("Ingresar kilometraje del AUTOBUS");
-        entradaCantidadJugadores20.setBorder(null);
-        entradaCantidadJugadores20.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusKilometraje.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusKilometraje.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusKilometraje.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusKilometraje.setText("Ingresar kilometraje del AUTOBUS");
+        entradaAutobusKilometraje.setBorder(null);
+        entradaAutobusKilometraje.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores20FocusGained(evt);
+                entradaAutobusKilometrajeFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores20FocusLost(evt);
+                entradaAutobusKilometrajeFocusLost(evt);
             }
         });
-        entradaCantidadJugadores20.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusKilometraje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores20ActionPerformed(evt);
+                entradaAutobusKilometrajeActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores20, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 280, -1));
+        jPanel16.add(entradaAutobusKilometraje, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 280, -1));
 
         jLabel197.setBackground(new java.awt.Color(51, 51, 51));
         jLabel197.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2390,25 +2394,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator76.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator76, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 390, 260, 10));
 
-        entradaCantidadJugadores21.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores21.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores21.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores21.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
-        entradaCantidadJugadores21.setBorder(null);
-        entradaCantidadJugadores21.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusRevision.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusRevision.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusRevision.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusRevision.setText("Ingresar fecha de revisiÓn (dd-mm-YYYY)");
+        entradaAutobusRevision.setBorder(null);
+        entradaAutobusRevision.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores21FocusGained(evt);
+                entradaAutobusRevisionFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores21FocusLost(evt);
+                entradaAutobusRevisionFocusLost(evt);
             }
         });
-        entradaCantidadJugadores21.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusRevision.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores21ActionPerformed(evt);
+                entradaAutobusRevisionActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores21, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 700, 280, -1));
+        jPanel16.add(entradaAutobusRevision, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 700, 280, -1));
 
         jLabel199.setBackground(new java.awt.Color(51, 51, 51));
         jLabel199.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2418,25 +2422,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator77.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator77, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 730, 290, 10));
 
-        entradaCantidadJugadores22.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores22.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores22.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores22.setText("Ingresar el numero de placa (6-8 caracteres)");
-        entradaCantidadJugadores22.setBorder(null);
-        entradaCantidadJugadores22.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusPlaca.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusPlaca.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusPlaca.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusPlaca.setText("Ingresar el numero de placa (6-8 caracteres)");
+        entradaAutobusPlaca.setBorder(null);
+        entradaAutobusPlaca.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores22FocusGained(evt);
+                entradaAutobusPlacaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores22FocusLost(evt);
+                entradaAutobusPlacaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores22.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusPlaca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores22ActionPerformed(evt);
+                entradaAutobusPlacaActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores22, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 280, -1));
+        jPanel16.add(entradaAutobusPlaca, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 700, 280, -1));
 
         jLabel200.setBackground(new java.awt.Color(51, 51, 51));
         jLabel200.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2446,25 +2450,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator78.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator78, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 730, 260, 10));
 
-        entradaCantidadJugadores23.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores23.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores23.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores23.setText("Ingresar el numero de asientos (1-100)");
-        entradaCantidadJugadores23.setBorder(null);
-        entradaCantidadJugadores23.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusChofer.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusChofer.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusChofer.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusChofer.setText("Ingresar el NOMBRE DEL CHOFER");
+        entradaAutobusChofer.setBorder(null);
+        entradaAutobusChofer.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores23FocusGained(evt);
+                entradaAutobusChoferFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores23FocusLost(evt);
+                entradaAutobusChoferFocusLost(evt);
             }
         });
-        entradaCantidadJugadores23.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusChofer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores23ActionPerformed(evt);
+                entradaAutobusChoferActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores23, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 280, -1));
+        jPanel16.add(entradaAutobusChofer, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 820, 280, -1));
 
         jLabel202.setBackground(new java.awt.Color(51, 51, 51));
         jLabel202.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2474,25 +2478,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator79.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator79, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 850, 260, 10));
 
-        entradaCantidadJugadores24.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores24.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores24.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores24.setText("Ingresar de donde sale el autobus");
-        entradaCantidadJugadores24.setBorder(null);
-        entradaCantidadJugadores24.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusDestinoI.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusDestinoI.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusDestinoI.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusDestinoI.setText("Ingresar de donde sale el autobus");
+        entradaAutobusDestinoI.setBorder(null);
+        entradaAutobusDestinoI.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores24FocusGained(evt);
+                entradaAutobusDestinoIFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores24FocusLost(evt);
+                entradaAutobusDestinoIFocusLost(evt);
             }
         });
-        entradaCantidadJugadores24.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusDestinoI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores24ActionPerformed(evt);
+                entradaAutobusDestinoIActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores24, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 820, 280, -1));
+        jPanel16.add(entradaAutobusDestinoI, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 820, 280, -1));
 
         jLabel203.setBackground(new java.awt.Color(51, 51, 51));
         jLabel203.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2505,25 +2509,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator81.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator81, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 260, 10));
 
-        entradaCantidadJugadores26.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores26.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores26.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores26.setText("Ingresar a donde llega el autobus");
-        entradaCantidadJugadores26.setBorder(null);
-        entradaCantidadJugadores26.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusDestinoF.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusDestinoF.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusDestinoF.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusDestinoF.setText("Ingresar a donde llega el autobus");
+        entradaAutobusDestinoF.setBorder(null);
+        entradaAutobusDestinoF.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores26FocusGained(evt);
+                entradaAutobusDestinoFFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores26FocusLost(evt);
+                entradaAutobusDestinoFFocusLost(evt);
             }
         });
-        entradaCantidadJugadores26.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusDestinoF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores26ActionPerformed(evt);
+                entradaAutobusDestinoFActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores26, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 930, 280, -1));
+        jPanel16.add(entradaAutobusDestinoF, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 930, 280, -1));
 
         jLabel208.setBackground(new java.awt.Color(51, 51, 51));
         jLabel208.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2533,25 +2537,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator83.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator83, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 960, 290, 10));
 
-        entradaCantidadJugadores27.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores27.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores27.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores27.setText("Ingresar el tiempo (en minutos)");
-        entradaCantidadJugadores27.setBorder(null);
-        entradaCantidadJugadores27.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusTiempo.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusTiempo.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusTiempo.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusTiempo.setText("Ingresar el tiempo (en minutos)");
+        entradaAutobusTiempo.setBorder(null);
+        entradaAutobusTiempo.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores27FocusGained(evt);
+                entradaAutobusTiempoFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores27FocusLost(evt);
+                entradaAutobusTiempoFocusLost(evt);
             }
         });
-        entradaCantidadJugadores27.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusTiempo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores27ActionPerformed(evt);
+                entradaAutobusTiempoActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores27, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 930, 280, -1));
+        jPanel16.add(entradaAutobusTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 930, 280, -1));
 
         jLabel217.setBackground(new java.awt.Color(51, 51, 51));
         jLabel217.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2561,25 +2565,25 @@ public class Menu extends javax.swing.JFrame {
         jSeparator84.setForeground(new java.awt.Color(0, 0, 0));
         jPanel16.add(jSeparator84, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 960, 260, 10));
 
-        entradaCantidadJugadores28.setBackground(new java.awt.Color(255, 255, 255));
-        entradaCantidadJugadores28.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        entradaCantidadJugadores28.setForeground(new java.awt.Color(153, 153, 153));
-        entradaCantidadJugadores28.setText("Ingresar GASTO DE GASOLINA (en litros)");
-        entradaCantidadJugadores28.setBorder(null);
-        entradaCantidadJugadores28.addFocusListener(new java.awt.event.FocusAdapter() {
+        entradaAutobusGasolina.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusGasolina.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusGasolina.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusGasolina.setText("Ingresar GASTO DE GASOLINA (en litros)");
+        entradaAutobusGasolina.setBorder(null);
+        entradaAutobusGasolina.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores28FocusGained(evt);
+                entradaAutobusGasolinaFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                entradaCantidadJugadores28FocusLost(evt);
+                entradaAutobusGasolinaFocusLost(evt);
             }
         });
-        entradaCantidadJugadores28.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusGasolina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                entradaCantidadJugadores28ActionPerformed(evt);
+                entradaAutobusGasolinaActionPerformed(evt);
             }
         });
-        jPanel16.add(entradaCantidadJugadores28, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 280, -1));
+        jPanel16.add(entradaAutobusGasolina, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 1050, 280, -1));
 
         jLabel218.setBackground(new java.awt.Color(51, 51, 51));
         jLabel218.setFont(new java.awt.Font("Bebas Neue", 0, 24)); // NOI18N
@@ -2594,18 +2598,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel219.setText("tiene baño:");
         jPanel16.add(jLabel219, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 1010, -1, 30));
 
-        ingresarRondaEliminacionDirecta6.setBackground(new java.awt.Color(255, 255, 255));
-        ingresarRondaEliminacionDirecta6.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
-        ingresarRondaEliminacionDirecta6.setForeground(new java.awt.Color(153, 153, 153));
-        ingresarRondaEliminacionDirecta6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
-        ingresarRondaEliminacionDirecta6.setToolTipText("");
-        ingresarRondaEliminacionDirecta6.setBorder(null);
-        ingresarRondaEliminacionDirecta6.addActionListener(new java.awt.event.ActionListener() {
+        entradaAutobusEstado.setBackground(new java.awt.Color(255, 255, 255));
+        entradaAutobusEstado.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
+        entradaAutobusEstado.setForeground(new java.awt.Color(153, 153, 153));
+        entradaAutobusEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0: NO DISPONIBLE", "1: DISPONIBLE", "2: EN RENTA", "3: FUERA DE SERVICIO O RETIRADO" }));
+        entradaAutobusEstado.setToolTipText("");
+        entradaAutobusEstado.setBorder(null);
+        entradaAutobusEstado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ingresarRondaEliminacionDirecta6ActionPerformed(evt);
+                entradaAutobusEstadoActionPerformed(evt);
             }
         });
-        jPanel16.add(ingresarRondaEliminacionDirecta6, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 250, 30));
+        jPanel16.add(entradaAutobusEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 250, 30));
 
         botonMinimizar8.setFont(new java.awt.Font("Bebas Neue", 0, 18)); // NOI18N
         botonMinimizar8.setForeground(new java.awt.Color(0, 0, 0));
@@ -3644,36 +3648,39 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_botonSalida9MouseClicked
 
-    private void entradaNombreTorneo1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo1FocusGained
+    private void entradaCamionetaCodigoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaCodigoFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo1FocusGained
+    }//GEN-LAST:event_entradaCamionetaCodigoFocusGained
 
-    private void entradaNombreTorneo1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo1FocusLost
+    private void entradaCamionetaCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaCodigoFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo1FocusLost
+    }//GEN-LAST:event_entradaCamionetaCodigoFocusLost
 
-    private void entradaNombreTorneo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo1ActionPerformed
+    private void entradaCamionetaCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo1ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaCodigoActionPerformed
 
-    private void entradaCantidadJugadores3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores3FocusGained
+    private void entradaCamionetaModeloFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaModeloFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores3FocusGained
+    }//GEN-LAST:event_entradaCamionetaModeloFocusGained
 
-    private void entradaCantidadJugadores3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores3FocusLost
+    private void entradaCamionetaModeloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaModeloFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores3FocusLost
+    }//GEN-LAST:event_entradaCamionetaModeloFocusLost
 
-    private void entradaCantidadJugadores3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores3ActionPerformed
+    private void entradaCamionetaModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaModeloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores3ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaModeloActionPerformed
 
     private void botonSeguirIngresarDatosTorneo1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo1MouseMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo1MouseMoved
 
     private void botonSeguirIngresarDatosTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo1MouseClicked
-        // TODO add your handling code here:
+        Camioneta camioneta = new Camioneta();
+        camioneta.leerDatos(entradaCamionetaCodigo, entradaCamionetaPlaca, entradaCamionetaModelo, entradaCamionetaMarca, entradaCamionetaCosto, entradaCamionetaRenta, entradaCamionetaAnio, entradaCamionetaKilometraje, entradaCamionetaEstado, entradaCamionetaRevision, entradaCamionetaAsientos, entradaCamionetaPasaje, entradaCamionetaPuertas);
+        this.listaVehiculo.add(camioneta);
+        pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo1MouseClicked
 
     private void botonSeguirIngresarDatosTorneo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo1MouseExited
@@ -3689,7 +3696,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo1MouseMoved
 
     private void botonRegresarIngresarDatosTorneo1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo1MouseClicked
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo1MouseClicked
 
     private void botonRegresarIngresarDatosTorneo1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo1MouseExited
@@ -3700,129 +3707,129 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo1ActionPerformed
 
-    private void ingresarRondaEliminacionDirecta4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta4ActionPerformed
+    private void entradaCamionetaEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirecta4ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaEstadoActionPerformed
 
-    private void entradaCantidadJugadores4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores4FocusGained
+    private void entradaCamionetaMarcaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaMarcaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores4FocusGained
+    }//GEN-LAST:event_entradaCamionetaMarcaFocusGained
 
-    private void entradaCantidadJugadores4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores4FocusLost
+    private void entradaCamionetaMarcaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaMarcaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores4FocusLost
+    }//GEN-LAST:event_entradaCamionetaMarcaFocusLost
 
-    private void entradaCantidadJugadores4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores4ActionPerformed
+    private void entradaCamionetaMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores4ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaMarcaActionPerformed
 
-    private void entradaCantidadJugadores5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores5FocusGained
+    private void entradaCamionetaCostoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaCostoFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores5FocusGained
+    }//GEN-LAST:event_entradaCamionetaCostoFocusGained
 
-    private void entradaCantidadJugadores5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores5FocusLost
+    private void entradaCamionetaCostoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaCostoFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores5FocusLost
+    }//GEN-LAST:event_entradaCamionetaCostoFocusLost
 
-    private void entradaCantidadJugadores5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores5ActionPerformed
+    private void entradaCamionetaCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaCostoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores5ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaCostoActionPerformed
 
-    private void entradaNombreTorneo3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo3FocusGained
+    private void entradaCamionetaRentaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaRentaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo3FocusGained
+    }//GEN-LAST:event_entradaCamionetaRentaFocusGained
 
-    private void entradaNombreTorneo3FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo3FocusLost
+    private void entradaCamionetaRentaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaRentaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo3FocusLost
+    }//GEN-LAST:event_entradaCamionetaRentaFocusLost
 
-    private void entradaNombreTorneo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo3ActionPerformed
+    private void entradaCamionetaRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaRentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo3ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaRentaActionPerformed
 
-    private void entradaCantidadJugadores9FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores9FocusGained
+    private void entradaCamionetaAnioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaAnioFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores9FocusGained
+    }//GEN-LAST:event_entradaCamionetaAnioFocusGained
 
-    private void entradaCantidadJugadores9FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores9FocusLost
+    private void entradaCamionetaAnioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaAnioFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores9FocusLost
+    }//GEN-LAST:event_entradaCamionetaAnioFocusLost
 
-    private void entradaCantidadJugadores9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores9ActionPerformed
+    private void entradaCamionetaAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaAnioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores9ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaAnioActionPerformed
 
-    private void entradaCantidadJugadores10FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores10FocusGained
+    private void entradaCamionetaKilometrajeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaKilometrajeFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores10FocusGained
+    }//GEN-LAST:event_entradaCamionetaKilometrajeFocusGained
 
-    private void entradaCantidadJugadores10FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores10FocusLost
+    private void entradaCamionetaKilometrajeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaKilometrajeFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores10FocusLost
+    }//GEN-LAST:event_entradaCamionetaKilometrajeFocusLost
 
-    private void entradaCantidadJugadores10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores10ActionPerformed
+    private void entradaCamionetaKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaKilometrajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores10ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaKilometrajeActionPerformed
 
-    private void entradaCantidadJugadores12FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores12FocusGained
+    private void entradaCamionetaRevisionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaRevisionFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores12FocusGained
+    }//GEN-LAST:event_entradaCamionetaRevisionFocusGained
 
-    private void entradaCantidadJugadores12FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores12FocusLost
+    private void entradaCamionetaRevisionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaRevisionFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores12FocusLost
+    }//GEN-LAST:event_entradaCamionetaRevisionFocusLost
 
-    private void entradaCantidadJugadores12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores12ActionPerformed
+    private void entradaCamionetaRevisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaRevisionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores12ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaRevisionActionPerformed
 
-    private void entradaCantidadJugadores13FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores13FocusGained
+    private void entradaCamionetaPlacaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPlacaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores13FocusGained
+    }//GEN-LAST:event_entradaCamionetaPlacaFocusGained
 
-    private void entradaCantidadJugadores13FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores13FocusLost
+    private void entradaCamionetaPlacaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPlacaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores13FocusLost
+    }//GEN-LAST:event_entradaCamionetaPlacaFocusLost
 
-    private void entradaCantidadJugadores13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores13ActionPerformed
+    private void entradaCamionetaPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaPlacaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores13ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaPlacaActionPerformed
 
-    private void entradaCantidadJugadores14FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores14FocusGained
+    private void entradaCamionetaAsientosFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaAsientosFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores14FocusGained
+    }//GEN-LAST:event_entradaCamionetaAsientosFocusGained
 
-    private void entradaCantidadJugadores14FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores14FocusLost
+    private void entradaCamionetaAsientosFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaAsientosFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores14FocusLost
+    }//GEN-LAST:event_entradaCamionetaAsientosFocusLost
 
-    private void entradaCantidadJugadores14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores14ActionPerformed
+    private void entradaCamionetaAsientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaAsientosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores14ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaAsientosActionPerformed
 
-    private void entradaCantidadJugadores15FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores15FocusGained
+    private void entradaCamionetaPasajeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPasajeFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores15FocusGained
+    }//GEN-LAST:event_entradaCamionetaPasajeFocusGained
 
-    private void entradaCantidadJugadores15FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores15FocusLost
+    private void entradaCamionetaPasajeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPasajeFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores15FocusLost
+    }//GEN-LAST:event_entradaCamionetaPasajeFocusLost
 
-    private void entradaCantidadJugadores15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores15ActionPerformed
+    private void entradaCamionetaPasajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaPasajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores15ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaPasajeActionPerformed
 
-    private void entradaCantidadJugadores16FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores16FocusGained
+    private void entradaCamionetaPuertasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPuertasFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores16FocusGained
+    }//GEN-LAST:event_entradaCamionetaPuertasFocusGained
 
-    private void entradaCantidadJugadores16FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores16FocusLost
+    private void entradaCamionetaPuertasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCamionetaPuertasFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores16FocusLost
+    }//GEN-LAST:event_entradaCamionetaPuertasFocusLost
 
-    private void entradaCantidadJugadores16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores16ActionPerformed
+    private void entradaCamionetaPuertasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCamionetaPuertasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores16ActionPerformed
+    }//GEN-LAST:event_entradaCamionetaPuertasActionPerformed
 
     private void botonMinimizar7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizar7MouseClicked
         this.setExtendedState(1);
@@ -3832,36 +3839,39 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_botonSalida7MouseClicked
 
-    private void entradaNombreTorneo4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo4FocusGained
+    private void entradaAutobusCodigoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusCodigoFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo4FocusGained
+    }//GEN-LAST:event_entradaAutobusCodigoFocusGained
 
-    private void entradaNombreTorneo4FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo4FocusLost
+    private void entradaAutobusCodigoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusCodigoFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo4FocusLost
+    }//GEN-LAST:event_entradaAutobusCodigoFocusLost
 
-    private void entradaNombreTorneo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo4ActionPerformed
+    private void entradaAutobusCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusCodigoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo4ActionPerformed
+    }//GEN-LAST:event_entradaAutobusCodigoActionPerformed
 
-    private void entradaCantidadJugadores11FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores11FocusGained
+    private void entradaAutobusModeloFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusModeloFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores11FocusGained
+    }//GEN-LAST:event_entradaAutobusModeloFocusGained
 
-    private void entradaCantidadJugadores11FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores11FocusLost
+    private void entradaAutobusModeloFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusModeloFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores11FocusLost
+    }//GEN-LAST:event_entradaAutobusModeloFocusLost
 
-    private void entradaCantidadJugadores11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores11ActionPerformed
+    private void entradaAutobusModeloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusModeloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores11ActionPerformed
+    }//GEN-LAST:event_entradaAutobusModeloActionPerformed
 
     private void botonSeguirIngresarDatosTorneo2MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo2MouseMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo2MouseMoved
 
     private void botonSeguirIngresarDatosTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo2MouseClicked
-        // TODO add your handling code here:
+        AutobusTuristico autobus = new AutobusTuristico();
+        autobus.leerDatos(entradaAutobusCodigo, entradaAutobusPlaca, entradaAutobusModelo, entradaAutobusMarca, entradaAutobusCosto, entradaAutobusRenta, entradaAutobusAnio, entradaAutobusKilometraje, entradaAutobusEstado, entradaAutobusRevision, entradaAutobusChofer, entradaAutobusDestinoI, entradaAutobusDestinoF, entradaAutobusTiempo, entradaAutobusGasolina, entradaAutobusBanio);
+        this.listaVehiculo.add(autobus);
+        pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo2MouseClicked
 
     private void botonSeguirIngresarDatosTorneo2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSeguirIngresarDatosTorneo2MouseExited
@@ -3877,7 +3887,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo2MouseMoved
 
     private void botonRegresarIngresarDatosTorneo2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo2MouseClicked
-        // TODO add your handling code here:
+        pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo2MouseClicked
 
     private void botonRegresarIngresarDatosTorneo2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarIngresarDatosTorneo2MouseExited
@@ -3888,157 +3898,157 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_botonRegresarIngresarDatosTorneo2ActionPerformed
 
-    private void ingresarRondaEliminacionDirecta5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta5ActionPerformed
+    private void entradaAutobusBanioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusBanioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirecta5ActionPerformed
+    }//GEN-LAST:event_entradaAutobusBanioActionPerformed
 
-    private void entradaCantidadJugadores17FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores17FocusGained
+    private void entradaAutobusMarcaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusMarcaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores17FocusGained
+    }//GEN-LAST:event_entradaAutobusMarcaFocusGained
 
-    private void entradaCantidadJugadores17FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores17FocusLost
+    private void entradaAutobusMarcaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusMarcaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores17FocusLost
+    }//GEN-LAST:event_entradaAutobusMarcaFocusLost
 
-    private void entradaCantidadJugadores17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores17ActionPerformed
+    private void entradaAutobusMarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusMarcaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores17ActionPerformed
+    }//GEN-LAST:event_entradaAutobusMarcaActionPerformed
 
-    private void entradaCantidadJugadores18FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores18FocusGained
+    private void entradaAutobusCostoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusCostoFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores18FocusGained
+    }//GEN-LAST:event_entradaAutobusCostoFocusGained
 
-    private void entradaCantidadJugadores18FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores18FocusLost
+    private void entradaAutobusCostoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusCostoFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores18FocusLost
+    }//GEN-LAST:event_entradaAutobusCostoFocusLost
 
-    private void entradaCantidadJugadores18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores18ActionPerformed
+    private void entradaAutobusCostoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusCostoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores18ActionPerformed
+    }//GEN-LAST:event_entradaAutobusCostoActionPerformed
 
-    private void entradaNombreTorneo5FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo5FocusGained
+    private void entradaAutobusRentaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusRentaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo5FocusGained
+    }//GEN-LAST:event_entradaAutobusRentaFocusGained
 
-    private void entradaNombreTorneo5FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaNombreTorneo5FocusLost
+    private void entradaAutobusRentaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusRentaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo5FocusLost
+    }//GEN-LAST:event_entradaAutobusRentaFocusLost
 
-    private void entradaNombreTorneo5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaNombreTorneo5ActionPerformed
+    private void entradaAutobusRentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusRentaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaNombreTorneo5ActionPerformed
+    }//GEN-LAST:event_entradaAutobusRentaActionPerformed
 
-    private void entradaCantidadJugadores19FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores19FocusGained
+    private void entradaAutobusAnioFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusAnioFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores19FocusGained
+    }//GEN-LAST:event_entradaAutobusAnioFocusGained
 
-    private void entradaCantidadJugadores19FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores19FocusLost
+    private void entradaAutobusAnioFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusAnioFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores19FocusLost
+    }//GEN-LAST:event_entradaAutobusAnioFocusLost
 
-    private void entradaCantidadJugadores19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores19ActionPerformed
+    private void entradaAutobusAnioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusAnioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores19ActionPerformed
+    }//GEN-LAST:event_entradaAutobusAnioActionPerformed
 
-    private void entradaCantidadJugadores20FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores20FocusGained
+    private void entradaAutobusKilometrajeFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusKilometrajeFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores20FocusGained
+    }//GEN-LAST:event_entradaAutobusKilometrajeFocusGained
 
-    private void entradaCantidadJugadores20FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores20FocusLost
+    private void entradaAutobusKilometrajeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusKilometrajeFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores20FocusLost
+    }//GEN-LAST:event_entradaAutobusKilometrajeFocusLost
 
-    private void entradaCantidadJugadores20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores20ActionPerformed
+    private void entradaAutobusKilometrajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusKilometrajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores20ActionPerformed
+    }//GEN-LAST:event_entradaAutobusKilometrajeActionPerformed
 
-    private void entradaCantidadJugadores21FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores21FocusGained
+    private void entradaAutobusRevisionFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusRevisionFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores21FocusGained
+    }//GEN-LAST:event_entradaAutobusRevisionFocusGained
 
-    private void entradaCantidadJugadores21FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores21FocusLost
+    private void entradaAutobusRevisionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusRevisionFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores21FocusLost
+    }//GEN-LAST:event_entradaAutobusRevisionFocusLost
 
-    private void entradaCantidadJugadores21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores21ActionPerformed
+    private void entradaAutobusRevisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusRevisionActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores21ActionPerformed
+    }//GEN-LAST:event_entradaAutobusRevisionActionPerformed
 
-    private void entradaCantidadJugadores22FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores22FocusGained
+    private void entradaAutobusPlacaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusPlacaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores22FocusGained
+    }//GEN-LAST:event_entradaAutobusPlacaFocusGained
 
-    private void entradaCantidadJugadores22FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores22FocusLost
+    private void entradaAutobusPlacaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusPlacaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores22FocusLost
+    }//GEN-LAST:event_entradaAutobusPlacaFocusLost
 
-    private void entradaCantidadJugadores22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores22ActionPerformed
+    private void entradaAutobusPlacaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusPlacaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores22ActionPerformed
+    }//GEN-LAST:event_entradaAutobusPlacaActionPerformed
 
-    private void entradaCantidadJugadores23FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores23FocusGained
+    private void entradaAutobusChoferFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusChoferFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores23FocusGained
+    }//GEN-LAST:event_entradaAutobusChoferFocusGained
 
-    private void entradaCantidadJugadores23FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores23FocusLost
+    private void entradaAutobusChoferFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusChoferFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores23FocusLost
+    }//GEN-LAST:event_entradaAutobusChoferFocusLost
 
-    private void entradaCantidadJugadores23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores23ActionPerformed
+    private void entradaAutobusChoferActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusChoferActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores23ActionPerformed
+    }//GEN-LAST:event_entradaAutobusChoferActionPerformed
 
-    private void entradaCantidadJugadores24FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores24FocusGained
+    private void entradaAutobusDestinoIFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoIFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores24FocusGained
+    }//GEN-LAST:event_entradaAutobusDestinoIFocusGained
 
-    private void entradaCantidadJugadores24FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores24FocusLost
+    private void entradaAutobusDestinoIFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoIFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores24FocusLost
+    }//GEN-LAST:event_entradaAutobusDestinoIFocusLost
 
-    private void entradaCantidadJugadores24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores24ActionPerformed
+    private void entradaAutobusDestinoIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoIActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores24ActionPerformed
+    }//GEN-LAST:event_entradaAutobusDestinoIActionPerformed
 
-    private void entradaCantidadJugadores26FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores26FocusGained
+    private void entradaAutobusDestinoFFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoFFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores26FocusGained
+    }//GEN-LAST:event_entradaAutobusDestinoFFocusGained
 
-    private void entradaCantidadJugadores26FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores26FocusLost
+    private void entradaAutobusDestinoFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoFFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores26FocusLost
+    }//GEN-LAST:event_entradaAutobusDestinoFFocusLost
 
-    private void entradaCantidadJugadores26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores26ActionPerformed
+    private void entradaAutobusDestinoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusDestinoFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores26ActionPerformed
+    }//GEN-LAST:event_entradaAutobusDestinoFActionPerformed
 
-    private void entradaCantidadJugadores27FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores27FocusGained
+    private void entradaAutobusTiempoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusTiempoFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores27FocusGained
+    }//GEN-LAST:event_entradaAutobusTiempoFocusGained
 
-    private void entradaCantidadJugadores27FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores27FocusLost
+    private void entradaAutobusTiempoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusTiempoFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores27FocusLost
+    }//GEN-LAST:event_entradaAutobusTiempoFocusLost
 
-    private void entradaCantidadJugadores27ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores27ActionPerformed
+    private void entradaAutobusTiempoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusTiempoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores27ActionPerformed
+    }//GEN-LAST:event_entradaAutobusTiempoActionPerformed
 
-    private void entradaCantidadJugadores28FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores28FocusGained
+    private void entradaAutobusGasolinaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusGasolinaFocusGained
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores28FocusGained
+    }//GEN-LAST:event_entradaAutobusGasolinaFocusGained
 
-    private void entradaCantidadJugadores28FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores28FocusLost
+    private void entradaAutobusGasolinaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_entradaAutobusGasolinaFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores28FocusLost
+    }//GEN-LAST:event_entradaAutobusGasolinaFocusLost
 
-    private void entradaCantidadJugadores28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaCantidadJugadores28ActionPerformed
+    private void entradaAutobusGasolinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusGasolinaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_entradaCantidadJugadores28ActionPerformed
+    }//GEN-LAST:event_entradaAutobusGasolinaActionPerformed
 
-    private void ingresarRondaEliminacionDirecta6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarRondaEliminacionDirecta6ActionPerformed
+    private void entradaAutobusEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_entradaAutobusEstadoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ingresarRondaEliminacionDirecta6ActionPerformed
+    }//GEN-LAST:event_entradaAutobusEstadoActionPerformed
 
     private void botonMinimizar8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonMinimizar8MouseClicked
         this.setExtendedState(1);
@@ -4126,43 +4136,43 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton botonSeguirIngresarDatosTorneo2;
     private javax.swing.JTextField codigo;
     private javax.swing.JTextField costo;
-    private javax.swing.JTextField entradaCantidadJugadores10;
-    private javax.swing.JTextField entradaCantidadJugadores11;
-    private javax.swing.JTextField entradaCantidadJugadores12;
-    private javax.swing.JTextField entradaCantidadJugadores13;
-    private javax.swing.JTextField entradaCantidadJugadores14;
-    private javax.swing.JTextField entradaCantidadJugadores15;
-    private javax.swing.JTextField entradaCantidadJugadores16;
-    private javax.swing.JTextField entradaCantidadJugadores17;
-    private javax.swing.JTextField entradaCantidadJugadores18;
-    private javax.swing.JTextField entradaCantidadJugadores19;
-    private javax.swing.JTextField entradaCantidadJugadores20;
-    private javax.swing.JTextField entradaCantidadJugadores21;
-    private javax.swing.JTextField entradaCantidadJugadores22;
-    private javax.swing.JTextField entradaCantidadJugadores23;
-    private javax.swing.JTextField entradaCantidadJugadores24;
+    private javax.swing.JTextField entradaAutobusAnio;
+    private javax.swing.JComboBox<String> entradaAutobusBanio;
+    private javax.swing.JTextField entradaAutobusChofer;
+    private javax.swing.JTextField entradaAutobusCodigo;
+    private javax.swing.JTextField entradaAutobusCosto;
+    private javax.swing.JTextField entradaAutobusDestinoF;
+    private javax.swing.JTextField entradaAutobusDestinoI;
+    private javax.swing.JComboBox<String> entradaAutobusEstado;
+    private javax.swing.JTextField entradaAutobusGasolina;
+    private javax.swing.JTextField entradaAutobusKilometraje;
+    private javax.swing.JTextField entradaAutobusMarca;
+    private javax.swing.JTextField entradaAutobusModelo;
+    private javax.swing.JTextField entradaAutobusPlaca;
+    private javax.swing.JTextField entradaAutobusRenta;
+    private javax.swing.JTextField entradaAutobusRevision;
+    private javax.swing.JTextField entradaAutobusTiempo;
+    private javax.swing.JTextField entradaCamionetaAnio;
+    private javax.swing.JTextField entradaCamionetaAsientos;
+    private javax.swing.JTextField entradaCamionetaCodigo;
+    private javax.swing.JTextField entradaCamionetaCosto;
+    private javax.swing.JComboBox<String> entradaCamionetaEstado;
+    private javax.swing.JTextField entradaCamionetaKilometraje;
+    private javax.swing.JTextField entradaCamionetaMarca;
+    private javax.swing.JTextField entradaCamionetaModelo;
+    private javax.swing.JTextField entradaCamionetaPasaje;
+    private javax.swing.JTextField entradaCamionetaPlaca;
+    private javax.swing.JTextField entradaCamionetaPuertas;
+    private javax.swing.JTextField entradaCamionetaRenta;
+    private javax.swing.JTextField entradaCamionetaRevision;
     private javax.swing.JTextField entradaCantidadJugadores25;
-    private javax.swing.JTextField entradaCantidadJugadores26;
-    private javax.swing.JTextField entradaCantidadJugadores27;
-    private javax.swing.JTextField entradaCantidadJugadores28;
     private javax.swing.JTextField entradaCantidadJugadores29;
-    private javax.swing.JTextField entradaCantidadJugadores3;
-    private javax.swing.JTextField entradaCantidadJugadores4;
-    private javax.swing.JTextField entradaCantidadJugadores5;
     private javax.swing.JTextField entradaCantidadJugadores6;
-    private javax.swing.JTextField entradaCantidadJugadores9;
-    private javax.swing.JTextField entradaNombreTorneo1;
-    private javax.swing.JTextField entradaNombreTorneo3;
-    private javax.swing.JTextField entradaNombreTorneo4;
-    private javax.swing.JTextField entradaNombreTorneo5;
     private javax.swing.JTextField estado;
     private javax.swing.JTextField extra;
     private javax.swing.JTextField extraDos;
     private javax.swing.JTextField extraTres;
     private javax.swing.JTextField extraUno;
-    private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta4;
-    private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta5;
-    private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta6;
     private javax.swing.JComboBox<String> ingresarRondaEliminacionDirecta7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel100;

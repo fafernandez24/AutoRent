@@ -4,10 +4,12 @@
  */
 package model;
 
+import static control.MenuControl.capturarEstadoJComboBox;
 import java.time.LocalDate;
 import java.util.Scanner;
 import static control.ValidacionLibrary.validarNumeroEntero;
 import static control.ValidacionLibrary.validarNumeroFlotante;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
@@ -186,126 +188,90 @@ public abstract class Vehiculo {
     
     // Metodos leer
     
-    public void leerCodigoVehiculo(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar codigo de: ");
-                numeroString = entrada.nextLine();
-                codigoVehiculo = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero");  
-            } finally {
-                if (codigoVehiculo < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
-            }
-        } while (!validarNumeroEntero(numeroString));
+    public void leerCodigoVehiculo(JTextField entrada){
+        String numeroString;
+        try{
+            numeroString = entrada.getText();
+            codigoVehiculo = Integer.parseInt(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero");  
+        } finally {
+            if (codigoVehiculo < 0) entrada.setText("ERROR. Ingresar un numero mayor o igual a 0");
+        }
     } 
     
-    public void leerPlacaVehiculo(){
-        do{
-            System.out.print("Ingresar el numero de placa del vehiculo (6-8 caracteres): ");
-            numeroPlaca = entrada.nextLine();
-        } while (!validarNumeroDePlaca());
+    public void leerPlacaVehiculo(JTextField entrada){
+            numeroPlaca = entrada.getText().toUpperCase();
     }
     
-    public void leerModeloVehiculo(){
-        do{
-            System.out.print("Ingresar modelo del vehiculo: ");
-            modelo = entrada.nextLine();
-        } while (!validarModelo());
+    public void leerModeloVehiculo(JTextField entrada){
+            modelo = entrada.getText();
     }
     
-    public void leerMarcaVehiculo(){
-        do{
-            System.out.print("Ingresar marca del vehiculo: ");
-            marca = entrada.nextLine();
-            if (!validarMarca()) System.out.println("ERROR. Ingresar nada mas letras");
-        } while (!validarMarca());
+    public void leerMarcaVehiculo(JTextField entrada){
+        marca = entrada.getText();
+        if (!validarMarca()) entrada.setText("ERROR. Ingresar nada mas letras");
     }
     
-    public void leerCostoAdquisicionVehiculo(){ 
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar costo de adqusicion del vehiculo: ");
-                numeroString = entrada.nextLine();
-                costoAdquisicion= Float.parseFloat(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero o con decimales");
-            } finally {
-                if (costoAdquisicion < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
-            }
-        } while (!validarNumeroFlotante(numeroString));
+    public void leerCostoAdquisicionVehiculo(JTextField entrada){ 
+        String numeroString;
+        try{
+            System.out.print("Ingresar costo de adqusicion del vehiculo: ");
+            numeroString = entrada.getText();
+            costoAdquisicion= Float.parseFloat(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero o con decimales");
+        } finally {
+            if (costoAdquisicion < 0) entrada.setText("ERROR. Ingresar un numero mayor o igual a 0");
+        }
     }
     
-    public void leerPrecioRentaVehiculo(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar precio de renta del vehiculo: ");
-                numeroString = entrada.nextLine();
-                precioRenta = Float.parseFloat(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero o con decimales");
-            } finally {
-                if (precioRenta < 0) System.out.println("ERROR. Ingresar un numero mayor o igual a 0");
-            }
-        } while (!validarNumeroFlotante(numeroString));
+    public void leerPrecioRentaVehiculo(JTextField entrada){
+        String numeroString;
+        try{
+            System.out.print("Ingresar precio de renta del vehiculo: ");
+            numeroString = entrada.getText();
+            precioRenta = Float.parseFloat(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero o con decimales");
+        } finally {
+            if (precioRenta < 0) entrada.setText("ERROR. Ingresar un numero mayor o igual a 0");
+        }
     }
   
-    public void leerAnioVehiculo(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar año del vehiculo(1885-2030): ");
-                numeroString = entrada.nextLine();
-                año = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero");
-            } finally {
-                if (!validarAnio()) System.out.println("ERROR. Ingresar un año entre 1885 y 2030");
-            }
-        } while (!validarNumeroEntero(numeroString) || !validarAnio());
+    public void leerAnioVehiculo(JTextField entrada){
+        String numeroString;
+        try{
+            System.out.print("Ingresar año del vehiculo(1885-2030): ");
+            numeroString = entrada.getText();
+            año = Integer.parseInt(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero");
+        } finally {
+            if (!validarAnio()) entrada.setText("ERROR. Ingresar un año entre 1885 y 2030");
+        }
     }
     
-    public void leerKilometrajeVehiculo(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.print("Ingresar kilometraje del vehiculo: ");
-                numeroString = entrada.nextLine();
-                kilometraje = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero");  
-            } finally {
-                if (kilometraje < 0) System.out.println("Ingresar un numero mayor o igual a 0");
-            }
-        } while (!validarNumeroEntero(numeroString));
+    public void leerKilometrajeVehiculo(JTextField entrada){
+        String numeroString;
+        try{
+            numeroString = entrada.getText();
+            kilometraje = Integer.parseInt(numeroString);
+        } catch (NumberFormatException error){
+            entrada.setText("ERROR. Ingresar un numero entero");  
+        } finally {
+            if (kilometraje < 0) entrada.setText("Ingresar un numero mayor o igual a 0");
+        }
     }
     
-    public void leerEstadoVehiculo(){
-        String numeroString = "";
-        do{
-            try{
-                System.out.println("Estados -\n0:No disponible\n1: Disponible para renta\n2: En renta\n3: Fuera de servicio o retirado");
-                System.out.print("Ingresar el numero del estado de la camioneta: ");
-                numeroString = entrada.nextLine();
-                estado = Integer.parseInt(numeroString);
-            } catch (NumberFormatException error){
-                System.out.println("ERROR. Ingresar un numero entero de 0 a 3");
-            } finally {
-                if (!validarEstado()) System.out.println("ERROR. Ingresar un numero del 0 al 3");
-            }
-        } while (!validarNumeroEntero(numeroString) || !validarEstado());
+    public void leerEstadoVehiculo(JComboBox entrada){
+        estado = capturarEstadoJComboBox(entrada);
     }
     
-    public void leerFechaRevisionVehiculo(){
+    public void leerFechaRevisionVehiculo(JTextField entrada){
         String fecha;
-        do{
-            System.out.print("Ingresar ultima fecha de revision del vehiculo(dd-mm-YYYY): ");
-            fecha = entrada.nextLine();
-            if (!validarFecha(fecha)) System.out.println("ERROR. Ingresar correctamente la fecha");
-        } while (!validarFecha(fecha));
+        fecha = entrada.getText();
+        if (!validarFecha(fecha)) entrada.setText("ERROR. Ingresar correctamente la fecha");
         int anio = Integer.parseInt(fecha.substring(6,10));
         int dia = Integer.parseInt(fecha.substring(0,2));
         int mes = Integer.parseInt(fecha.substring(3,5));
@@ -318,6 +284,5 @@ public abstract class Vehiculo {
     public abstract void precioDeRenta(float porcentaje);
     public abstract void precioDeRenta(float porcentaje, float seguro, float servicioExtra);
     public abstract void determinarMantenimiento(JTextField aviso, JLabel modelo, JLabel kilometraje, JLabel revision);
-    public abstract void leerDatos();
      
 } 

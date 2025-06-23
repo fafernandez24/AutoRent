@@ -145,30 +145,4 @@ public class MainLibrary {
         }
     }
     
-    public static void actualizarInformacion(Vehiculo vehiculo){
-        vehiculo.leerKilometrajeVehiculo();
-        vehiculo.leerEstadoVehiculo();
-    }
-    
-    public static void gestionarRetiro(Vehiculo listaVehiculo){
-        int opcion = gestionarRetiroMenu();
-        switch(opcion){
-            case 1 -> {
-                listaVehiculo.setEstado(2);
-            }
-            case 2 -> {
-                listaVehiculo.setEstado(1);
-            }
-            case 3 -> {
-                listaVehiculo.setEstado(3);
-            }
-            case 4 -> {
-                System.out.println(listaVehiculo.determinarMantenimiento());
-            }
-            default -> {
-                System.out.println("ERROR: Ingresar una opcion valida.");
-            }    
-        }
-    }
-    
 }
