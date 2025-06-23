@@ -29,7 +29,7 @@ public class CamionetaXMLControl {
     private final String fileLocation;
 
    public CamionetaXMLControl() throws JDOMException, IOException {
-        this.fileLocation = "C:\\Users\\PC\\Documents\\GitHub\\AutoRent\\AutoRent\\Other Sources\\files\\camioneta.xml"; 
+        this.fileLocation = "Other Sources/files/camioneta.xml"; 
         try {
             SAXBuilder builder = new SAXBuilder();
             Document doc = builder.build(fileLocation);

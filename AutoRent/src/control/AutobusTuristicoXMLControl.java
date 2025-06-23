@@ -29,7 +29,7 @@ public class AutobusTuristicoXMLControl {
     private final String fileLocation;
 
    public AutobusTuristicoXMLControl() throws JDOMException, IOException {
-        this.fileLocation = "C:\\Users\\PC\\Documents\\GitHub\\AutoRent\\AutoRent\\Other Sources\\files\\autobusTuristico.xml"; 
+        this.fileLocation = "Other Sources/files/autobusTuristico.XML"; 
         try {
             SAXBuilder builder = new SAXBuilder();
             Document doc = builder.build(fileLocation);
