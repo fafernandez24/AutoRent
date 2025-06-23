@@ -4,10 +4,11 @@
  */
 package model;
 
-import model.Vehiculo;
 import static control.ValidacionLibrary.validarNumeroEntero;
 import static control.ValidacionLibrary.validarNumeroFlotante;
 import java.time.LocalDate;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -26,13 +27,13 @@ public class Camioneta extends Vehiculo{
     public Camioneta(){}
     
     // Constrcutor #2
-    public Camioneta(int numeroPasajeros, float costoPasaje, int numeroPuertas, int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision) {
-        super(codigoVehiculo, numeroPlaca, modelo, marca, año, costoAdquisicion, precioRenta, kilometraje, estado, fechaRevision);
+    public Camioneta(int numeroPasajeros, float costoPasaje, int numeroPuertas, int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision, String tipo) {
+        super(codigoVehiculo, numeroPlaca, modelo, marca, año, costoAdquisicion, precioRenta, kilometraje, estado, fechaRevision, tipo);
         this.numeroPasajeros = numeroPasajeros;
         this.costoPasaje = costoPasaje;
         this.numeroPuertas = numeroPuertas;
     }
-    
+
     // Metodos Getter
 
     public int getNumeroPasajeros() {
@@ -42,7 +43,11 @@ public class Camioneta extends Vehiculo{
     public float getCostoPasaje() {
         return costoPasaje;
     }
-    
+
+    public int getNumeroPuertas() {
+        return numeroPuertas;
+    }
+
     // Metodos Setter
 
     public void setNumeroPasajeros(int numeroPasajeros) {
@@ -52,7 +57,11 @@ public class Camioneta extends Vehiculo{
     public void setCostoPasaje(float costoPasaje) {
         this.costoPasaje = costoPasaje;
     }
-    
+
+    public void setNumeroPuertas(int numeroPuertas) {
+        this.numeroPuertas = numeroPuertas;
+    }
+
     // Validaciones
     
     public boolean validarNumeroPasajeros(){
@@ -78,16 +87,17 @@ public class Camioneta extends Vehiculo{
     }
     
     @Override
-    public String determinarMantenimiento(){
+    public void determinarMantenimiento(JTextField aviso, JLabel modelo, JLabel kilometraje, JLabel revision){
         LocalDate hoy = LocalDate.now();
-        if (kilometraje >= 5000 && fechaRevision.isBefore(hoy.minusYears(1))){
-            return "Kilometraje: " + kilometraje + 
-                    "\nUltima fecha de revision: " + fechaRevision +
-                    "\nAVISO: Llevar el vehiculo a mantenimiento. Se recomienda su retiro temporal.";
+        modelo.setText(this.modelo);
+        kilometraje.setText(String.valueOf(this.kilometraje));
+        revision.setText(String.valueOf(this.fechaRevision));
+        if (this.kilometraje >= 5000 && fechaRevision.isBefore(hoy.minusYears(1))){
+            aviso.setText("Llevar el vehiculo a mantenimiento. Se recomienda su retiro temporal...");
         }
-        return "Kilometraje: " + kilometraje + 
-            "\nUltima fecha de revision: " + fechaRevision +
-            "\nAVISO: No es necesario llevar el vehiculo a mantenimiento";
+        else{
+            aviso.setText("No es necesario llevar el vehiculo a mantenimiento...");
+        }
     }
     
     // Metodos leer
@@ -139,7 +149,6 @@ public class Camioneta extends Vehiculo{
         } while (!validarNumeroEntero(numeroString) || !validarNumeroPuertas()); 
     }
     
-    @Override
     public String mostrarInformacion(){
         return "Codigo de la camioneta: " + codigoVehiculo +
             "\nNumero de placa: " + numeroPlaca +
@@ -170,6 +179,23 @@ public class Camioneta extends Vehiculo{
         leerNumeroAsientosVehiculo();
         leerCostoPasajeVehiculo();
         leerNumeroPuertasVehiculo();
+    }
+    
+    @Override
+    public void mostrarInformacion(JTextField placa, JTextField modelo, JTextField marca, JTextField anioVehiculo, JTextField costoAdquisicion, JTextField precioRenta, JTextField kilometraje, JTextField estado, JTextField fechaRevision, JTextField codigo, JTextField extraUno, JTextField extraDos, JTextField extraTres){
+       placa.setText(this.numeroPlaca);
+       modelo.setText(this.modelo);
+       marca.setText(this.marca);
+       anioVehiculo.setText(String.valueOf(this.año));
+       costoAdquisicion.setText(String.valueOf(this.costoAdquisicion));
+       precioRenta.setText(String.valueOf(this.precioRenta));
+       kilometraje.setText(String.valueOf(this.kilometraje));
+       estado.setText(String.valueOf(this.estado));
+       fechaRevision.setText(String.valueOf(this.fechaRevision));
+       codigo.setText(String.valueOf(this.codigoVehiculo));
+       extraUno.setText(String.valueOf(this.numeroPasajeros));
+       extraDos.setText(String.valueOf(this.costoPasaje));
+       extraTres.setText(String.valueOf(this.numeroPuertas));
     }
     
 }

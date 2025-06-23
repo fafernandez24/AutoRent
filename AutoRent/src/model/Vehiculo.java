@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import static control.ValidacionLibrary.validarNumeroEntero;
 import static control.ValidacionLibrary.validarNumeroFlotante;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 /**
  *
@@ -29,6 +31,7 @@ public abstract class Vehiculo {
     protected int kilometraje;
     protected int estado;
     protected LocalDate fechaRevision;
+    protected String tipo;
     
     // Metodos
     
@@ -36,7 +39,7 @@ public abstract class Vehiculo {
     public Vehiculo(){}
     
     // Constructor #2
-    public Vehiculo(int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision){
+    public Vehiculo(int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision, String tipo) {
         this.codigoVehiculo = codigoVehiculo;
         this.numeroPlaca = numeroPlaca;
         this.modelo = modelo;
@@ -47,8 +50,9 @@ public abstract class Vehiculo {
         this.kilometraje = kilometraje;
         this.estado = estado;
         this.fechaRevision = fechaRevision;
+        this.tipo = tipo;
     }
-    
+
     // Metodos Getter
 
     public int getCodigoVehiculo() {
@@ -89,6 +93,10 @@ public abstract class Vehiculo {
 
     public LocalDate getFechaRevision() {
         return fechaRevision;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
     
     // Metodos Setter
@@ -131,6 +139,10 @@ public abstract class Vehiculo {
 
     public void setFechaRevision(LocalDate fechaRevision) {
         this.fechaRevision = fechaRevision;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
     
     // Validaciones
@@ -302,10 +314,10 @@ public abstract class Vehiculo {
     
     // Metodos abstractos
     
+    public abstract void mostrarInformacion(JTextField placa, JTextField modelo, JTextField marca, JTextField anioVehiculo, JTextField costoAdquisicion, JTextField precioRenta, JTextField kilometraje, JTextField estado, JTextField fechaRevision, JTextField codigo, JTextField extraUno, JTextField extraDos, JTextField extraTres);
     public abstract void precioDeRenta(float porcentaje);
     public abstract void precioDeRenta(float porcentaje, float seguro, float servicioExtra);
-    public abstract String mostrarInformacion();
-    public abstract String determinarMantenimiento();
+    public abstract void determinarMantenimiento(JTextField aviso, JLabel modelo, JLabel kilometraje, JLabel revision);
     public abstract void leerDatos();
      
 } 

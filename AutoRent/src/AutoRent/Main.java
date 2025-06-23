@@ -4,11 +4,15 @@
  */
 package AutoRent;
 
-import model.AutobusTuristico;
+import com.formdev.flatlaf.FlatLightLaf;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import model.Camioneta;
 import model.Vehiculo;
-import control.MainLibrary;
-import java.time.LocalDate;
+import view.Menu;
 
 /**
  * 
@@ -17,67 +21,52 @@ import java.time.LocalDate;
  */
 public class Main {
     
-    public static void main(String[] args){
-                
-        Vehiculo camioneta = new Camioneta(20, 25,2,120, "12GH89F", "Fiesta", "Ford", 2008, 4678, 230, 203608, 1, LocalDate.of(2025, 4, 14));
-        Vehiculo autobus = new AutobusTuristico("Freddy Parra","Las Mercedes", "Tucacas", 4,true ,40 ,120, "45JK77P", "70V", "Ferrari", 2022, 300678, 30006 , 50678, 2, LocalDate.of(2008, 4, 16));
-        int opcion;
+    public static void main(String[] args) throws UnsupportedLookAndFeelException{
         
-        do{
-            System.out.println("Objeto Camion | Para ver el objeto autobus, ingresar 0");
-            opcion = MainLibrary.menu();
-            switch(opcion){            
-                
-                case 1 -> {
-                    camioneta = new Camioneta();
-                    camioneta.leerDatos();
-                }
-                case 2 -> {
-                    MainLibrary.actualizarInformacion(camioneta);
-                }
-                case 3 -> {
-                    MainLibrary.calcularRenta(camioneta);
-                }
-                case 4 -> {
-                    MainLibrary.gestionarRetiro(camioneta);
-                }
-                case 5 -> {
-                    System.out.println(camioneta.mostrarInformacion());
-                }
-                default -> {
-                    if (opcion == 0) System.out.println("Pasaste al objeto AutobusTuristico!");
-                    else System.out.println("ERROR: Ingresar una opcion valida.");
-                }
-            }
-        } while(opcion != 0); 
         
-        do{
-            System.out.println("Objeto AutobusTuristico | Para salir del programa, ingresar 0");
-            opcion = MainLibrary.menu();
-            switch(opcion){            
-                
-                case 1 -> {
-                    autobus = new AutobusTuristico();
-                    autobus.leerDatos();
-                }
-                case 2 -> {
-                    MainLibrary.actualizarInformacion(autobus);
-                }
-                case 3 -> {
-                    MainLibrary.calcularRenta(autobus);
-                }
-                case 4 -> {
-                    MainLibrary.gestionarRetiro(autobus);
-                }
-                case 5 -> {
-                    System.out.println(autobus.mostrarInformacion());
-                }
-                default -> {
-                    if (opcion == 0) System.out.println("Hasta pronto!");
-                    else System.out.println("ERROR: Ingresar una opcion valida.");
-                }
-            }
-        } while(opcion != 0); 
-            
-    } 
+        Camioneta camioneta1 = new Camioneta();
+        camioneta1.setCodigoVehiculo(101);
+        camioneta1.setNumeroPlaca("ABC123");
+        camioneta1.setModelo("Hilux");
+        camioneta1.setMarca("Toyota");
+        camioneta1.setAño(2022);
+        camioneta1.setCostoAdquisicion(25000.0f);
+        camioneta1.setPrecioRenta(150.0f);
+        camioneta1.setKilometraje(5000);
+        camioneta1.setEstado(1);
+        camioneta1.setFechaRevision(LocalDate.of(2025, 6, 10));
+        camioneta1.setTipo("Pickup");
+        camioneta1.setNumeroPasajeros(5);
+        camioneta1.setCostoPasaje(3.5f);
+        camioneta1.setNumeroPuertas(4);
+    
+        Camioneta camioneta2 = new Camioneta();
+        camioneta2.setCodigoVehiculo(102);
+        camioneta2.setNumeroPlaca("XYZ789");
+        camioneta2.setModelo("D-Max");
+        camioneta2.setMarca("Isuzu");
+        camioneta2.setAño(2023);
+        camioneta2.setCostoAdquisicion(27000.0f);
+        camioneta2.setPrecioRenta(160.0f);
+        camioneta2.setKilometraje(2000);
+        camioneta2.setEstado(0);
+        camioneta2.setFechaRevision(LocalDate.of(2025, 5, 25));
+        camioneta2.setTipo("SUV");
+        camioneta2.setNumeroPasajeros(8);
+        camioneta2.setCostoPasaje(4.2f);
+        camioneta2.setNumeroPuertas(5);
+
+       
+        // Permite que la interfaz grafica se vea un poco mejor.
+        UIManager.setLookAndFeel(new FlatLightLaf());
+        
+        List<Vehiculo> listaVehiculo = new ArrayList<>();
+        
+        listaVehiculo.add(camioneta1);
+        listaVehiculo.add(camioneta2);
+        
+        
+        Menu openStart = new Menu(listaVehiculo);
+        openStart.setVisible(true);
+    }
 }
