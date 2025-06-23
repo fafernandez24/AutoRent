@@ -4,15 +4,19 @@
  */
 package view;
 
+import control.AutobusTuristicoXMLControl;
+import control.CamionetaXMLControl;
 import static control.MenuControl.actualizarEstadoVehiculo;
 import static control.MenuControl.calcularRentaBasicaVehiculo;
 import static control.MenuControl.calcularRentaExtraVehiculo;
 import static control.MenuControl.encontrarPosicionVehiculoId;
 import static control.MenuControl.encontrarVehiculoId;
+import java.io.IOException;
 import java.util.List;
 import model.AutobusTuristico;
 import model.Camioneta;
 import model.Vehiculo;
+import org.jdom.JDOMException;
 
 /**
  *
@@ -21,19 +25,22 @@ import model.Vehiculo;
 public class Menu extends javax.swing.JFrame {
     
     // Atributos
-    
+    private CamionetaXMLControl camionetaXML;
+    private AutobusTuristicoXMLControl autobusXML;
     private List<Vehiculo> listaVehiculo;
 
     /**
      * Creates new form Menu
      * @param listaVehiculo
      */
-    public Menu(List<Vehiculo> listaVehiculo) {
+    public Menu(List<Vehiculo> listaVehiculo) throws JDOMException, IOException {
         this.setUndecorated(true);
         initComponents();
         this.setResizable(true);
         this.setLocationRelativeTo(null);
         this.listaVehiculo = listaVehiculo;
+        this.camionetaXML = new CamionetaXMLControl();
+        this.autobusXML = new AutobusTuristicoXMLControl();
     }
 
     /**
@@ -3680,6 +3687,7 @@ public class Menu extends javax.swing.JFrame {
         Camioneta camioneta = new Camioneta();
         camioneta.leerDatos(entradaCamionetaCodigo, entradaCamionetaPlaca, entradaCamionetaModelo, entradaCamionetaMarca, entradaCamionetaCosto, entradaCamionetaRenta, entradaCamionetaAnio, entradaCamionetaKilometraje, entradaCamionetaEstado, entradaCamionetaRevision, entradaCamionetaAsientos, entradaCamionetaPasaje, entradaCamionetaPuertas);
         this.listaVehiculo.add(camioneta);
+        this.camionetaXML.agregarCamioneta(camioneta);
         pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo1MouseClicked
 
@@ -3871,6 +3879,7 @@ public class Menu extends javax.swing.JFrame {
         AutobusTuristico autobus = new AutobusTuristico();
         autobus.leerDatos(entradaAutobusCodigo, entradaAutobusPlaca, entradaAutobusModelo, entradaAutobusMarca, entradaAutobusCosto, entradaAutobusRenta, entradaAutobusAnio, entradaAutobusKilometraje, entradaAutobusEstado, entradaAutobusRevision, entradaAutobusChofer, entradaAutobusDestinoI, entradaAutobusDestinoF, entradaAutobusTiempo, entradaAutobusGasolina, entradaAutobusBanio);
         this.listaVehiculo.add(autobus);
+        this.autobusXML.agregarAutobus(autobus);
         pestania.setSelectedIndex(0);
     }//GEN-LAST:event_botonSeguirIngresarDatosTorneo2MouseClicked
 

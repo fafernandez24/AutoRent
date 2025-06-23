@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+<AutobusesTuristicos>
+    <AutobusTuristico>
+        <codigoVehiculo>201</codigoVehiculo>
+        <numeroPlaca>VNZ-001</numeroPlaca>
+        <modelo>Galaxy</modelo>
+        <marca>Mercedes-Benz</marca>
+        <año>2018</año>
+        <costoAdquisicion>45000.0</costoAdquisicion>
+        <precioRenta>250.0</precioRenta>
+        <kilometraje>90000</kilometraje>
+        <estado>1</estado>
+        <fechaRevision>2025-05-15</fechaRevision>
+        <nombreChofer>Pedro Martínez</nombreChofer>
+        <destinoInicial>Caracas</destinoInicial>
+        <destinoFinal>Mérida</destinoFinal>
+        <tiempoRecorrido>600</tiempoRecorrido>
+        <sanitario>true</sanitario>
+        <gastoGasolina>120.5</gastoGasolina>
+    </AutobusTuristico>
+    <AutobusTuristico>
+        <codigoVehiculo>202</codigoVehiculo>
+        <numeroPlaca>VNZ-002</numeroPlaca>
+        <modelo>Tourliner</modelo>
+        <marca>MAN</marca>
+        <año>2019</año>
+        <costoAdquisicion>47000.0</costoAdquisicion>
+        <precioRenta>265.0</precioRenta>
+        <kilometraje>85000</kilometraje>
+        <estado>1</estado>
+        <fechaRevision>2025-04-20</fechaRevision>
+        <nombreChofer>Laura Gómez</nombreChofer>
+        <destinoInicial>Valencia</destinoInicial>
+        <destinoFinal>Puerto La Cruz</destinoFinal>
+        <tiempoRecorrido>480</tiempoRecorrido>
+        <sanitario>false</sanitario>
+        <gastoGasolina>98.0</gastoGasolina>
+    </AutobusTuristico>
+    <AutobusTuristico>
+        <codigoVehiculo>203</codigoVehiculo>
+        <numeroPlaca>VNZ-003</numeroPlaca>
+        <modelo>Irizar i6</modelo>
+        <marca>Scania</marca>
+        <año>2020</año>
+        <costoAdquisicion>49000.0</costoAdquisicion>
+        <precioRenta>280.0</precioRenta>
+        <kilometraje>75000</kilometraje>
+        <estado>0</estado>
+        <fechaRevision>2025-03-05</fechaRevision>
+        <nombreChofer>Carlos Ruiz</nombreChofer>
+        <destinoInicial>Maracaibo</destinoInicial>
+        <destinoFinal>Valera</destinoFinal>
+        <tiempoRecorrido>520</tiempoRecorrido>
+        <sanitario>true</sanitario>
+        <gastoGasolina>110.3</gastoGasolina>
+    </AutobusTuristico>
+    <AutobusTuristico>
+        <codigoVehiculo>204</codigoVehiculo>
+        <numeroPlaca>VNZ-004</numeroPlaca>
+        <modelo>Volvo 9700</modelo>
+        <marca>Volvo</marca>
+        <año>2021</año>
+        <costoAdquisicion>51000.0</costoAdquisicion>
+        <precioRenta>295.0</precioRenta>
+        <kilometraje>65000</kilometraje>
+        <estado>1</estado>
+        <fechaRevision>2025-02-10</fechaRevision>
+        <nombreChofer>Andrea Pérez</nombreChofer>
+        <destinoInicial>Barquisimeto</destinoInicial>
+        <destinoFinal>San Cristóbal</destinoFinal>
+        <tiempoRecorrido>560</tiempoRecorrido>
+        <sanitario>true</sanitario>
+        <gastoGasolina>115.7</gastoGasolina>
+    </AutobusTuristico>
+    <AutobusTuristico>
+        <codigoVehiculo>205</codigoVehiculo>
+        <numeroPlaca>VNZ-005</numeroPlaca>
+        <modelo>Sideral</modelo>
+        <marca>Volkswagen</marca>
+        <año>2022</año>
+        <costoAdquisicion>53000.0</costoAdquisicion>
+        <precioRenta>305.0</precioRenta>
+        <kilometraje>50000</kilometraje>
+        <estado>0</estado>
+        <fechaRevision>2025-06-02</fechaRevision>
+        <nombreChofer>Jorge Linares</nombreChofer>
+        <destinoInicial>Barcelona</destinoInicial>
+        <destinoFinal>Ciudad Bolívar</destinoFinal>
+        <tiempoRecorrido>610</tiempoRecorrido>
+        <sanitario>false</sanitario>
+        <gastoGasolina>123.9</gastoGasolina>
+    </AutobusTuristico>
+</AutobusesTuristicos>
+
+

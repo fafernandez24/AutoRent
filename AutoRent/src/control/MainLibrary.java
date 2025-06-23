@@ -8,7 +8,11 @@ import model.Vehiculo;
 import static control.ValidacionLibrary.validarNumeroEntero;
 import static control.ValidacionLibrary.validarNumeroFlotante;
 import static control.ValidacionLibrary.validarPorcentaje;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import model.AutobusTuristico;
+import model.Camioneta;
 
 /**
  *
@@ -144,5 +148,17 @@ public class MainLibrary {
             }
         }
     }
+    
+    public static List<Vehiculo> leerListadoDeVehiculos(List<Camioneta> listaCamioneta, List<AutobusTuristico> listaAutobus){ 
+        List<Vehiculo> listVehiculos = new ArrayList<>();  
+        for (int i =0; i < listaCamioneta.size(); i++){
+            listVehiculos.add(listaCamioneta.get(i));
+        }
+        for (int i =0; i < listaAutobus.size(); i++){
+            listVehiculos.add(listaAutobus.get(i));
+        }
+        return listVehiculos;
+    }
+    
     
 }

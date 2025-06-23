@@ -4,8 +4,6 @@
  */
 package model;
 
-import static control.ValidacionLibrary.validarNumeroEntero;
-import static control.ValidacionLibrary.validarNumeroFlotante;
 import java.time.LocalDate;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -32,8 +30,8 @@ public class AutobusTuristico extends Vehiculo{
     public AutobusTuristico(){}
     
     // Constructor #2
-    public AutobusTuristico(String nombreChofer, String destinoInicial, String destinoFinal, int tiempoRecorrido, boolean sanitario, float gastoGasolina, int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision, String tipo) {
-        super(codigoVehiculo, numeroPlaca, modelo, marca, año, costoAdquisicion, precioRenta, kilometraje, estado, fechaRevision, tipo);
+    public AutobusTuristico(String nombreChofer, String destinoInicial, String destinoFinal, int tiempoRecorrido, boolean sanitario, float gastoGasolina, int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision) {
+        super(codigoVehiculo, numeroPlaca, modelo, marca, año, costoAdquisicion, precioRenta, kilometraje, estado, fechaRevision);
         this.nombreChofer = nombreChofer;
         this.destinoInicial = destinoInicial;
         this.destinoFinal = destinoFinal;

@@ -7,8 +7,6 @@ package model;
 import static control.MenuControl.capturarEstadoJComboBox;
 import java.time.LocalDate;
 import java.util.Scanner;
-import static control.ValidacionLibrary.validarNumeroEntero;
-import static control.ValidacionLibrary.validarNumeroFlotante;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -18,8 +16,6 @@ import javax.swing.JTextField;
  * @author Freddy
  */
 public abstract class Vehiculo {
-    
-    Scanner entrada = new Scanner(System.in);
     
     // Atributos
     
@@ -33,7 +29,6 @@ public abstract class Vehiculo {
     protected int kilometraje;
     protected int estado;
     protected LocalDate fechaRevision;
-    protected String tipo;
     
     // Metodos
     
@@ -41,7 +36,7 @@ public abstract class Vehiculo {
     public Vehiculo(){}
     
     // Constructor #2
-    public Vehiculo(int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision, String tipo) {
+    public Vehiculo(int codigoVehiculo, String numeroPlaca, String modelo, String marca, int año, float costoAdquisicion, float precioRenta, int kilometraje, int estado, LocalDate fechaRevision) {
         this.codigoVehiculo = codigoVehiculo;
         this.numeroPlaca = numeroPlaca;
         this.modelo = modelo;
@@ -52,7 +47,6 @@ public abstract class Vehiculo {
         this.kilometraje = kilometraje;
         this.estado = estado;
         this.fechaRevision = fechaRevision;
-        this.tipo = tipo;
     }
 
     // Metodos Getter
@@ -96,10 +90,6 @@ public abstract class Vehiculo {
     public LocalDate getFechaRevision() {
         return fechaRevision;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
     
     // Metodos Setter
 
@@ -141,10 +131,6 @@ public abstract class Vehiculo {
 
     public void setFechaRevision(LocalDate fechaRevision) {
         this.fechaRevision = fechaRevision;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
     }
     
     // Validaciones
