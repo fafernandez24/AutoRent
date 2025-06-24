@@ -107,10 +107,11 @@ public class CamionetaXMLControl {
     public boolean actualizarCamioneta(Vehiculo camioneta) {
         Element elementoActualizar = buscarElementoPorCodigo(camioneta.getCodigoVehiculo());
         if (elementoActualizar != null) {
-            elementoActualizar.getChild(String.valueOf(camioneta.getKilometraje()));
-            elementoActualizar.getChild(String.valueOf(camioneta.getFechaRevision()));
-            elementoActualizar.getChild(camioneta.getNumeroPlaca());
-            elementoActualizar.getChild(String.valueOf(camioneta.getEstado()));
+            Vehiculo vehi = (Vehiculo) camioneta;
+            elementoActualizar.getChild(String.valueOf(vehi.getKilometraje()));
+            elementoActualizar.getChild(String.valueOf(vehi.getFechaRevision()));
+            elementoActualizar.getChild(vehi.getNumeroPlaca());
+            elementoActualizar.getChild(String.valueOf((char) vehi.getEstado()));
             return updateDocument();
         }
 

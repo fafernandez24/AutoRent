@@ -15,8 +15,10 @@ import static control.MenuControl.encontrarPosicionVehiculoId;
 import static control.MenuControl.encontrarVehiculoId;
 import static control.MenuControl.focusGained;
 import static control.MenuControl.focusLost;
+import java.awt.Image;
 import java.io.IOException;
 import java.util.List;
+import javax.swing.ImageIcon;
 import model.AutobusTuristico;
 import model.Camioneta;
 import model.Vehiculo;
@@ -40,6 +42,7 @@ public class Menu extends javax.swing.JFrame {
      * @throws java.io.IOException
      */
     public Menu(List<Vehiculo> listaVehiculo) throws JDOMException, IOException {
+        this.newIcon();
         this.setUndecorated(true);
         initComponents();
         this.setResizable(true);
@@ -47,6 +50,11 @@ public class Menu extends javax.swing.JFrame {
         this.listaVehiculo = listaVehiculo;
         this.camionetaXML = new CamionetaXMLControl();
         this.autobusXML = new AutobusTuristicoXMLControl();
+    }
+    
+    private void newIcon(){
+        Image icon = new ImageIcon(getClass().getResource("/images/vehicle.png")).getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -3667,10 +3675,10 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_botonBuscarJugador4MouseMoved
 
     private void botonBuscarJugador4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador4MouseClicked
-        Vehiculo vehiculo = encontrarVehiculoId(Integer.parseInt(textoBuscarJugador5.getText()), listaVehiculo);
-        vehiculo.actualizarVehiculo(actualizarKilometraje, actualizarRevision,  actualizarPlaca, actualizarEstado);
-        this.camionetaXML.actualizarCamioneta(vehiculo);
-        this.autobusXML.actualizarAutobusTuristico(vehiculo);
+        int posicion = encontrarPosicionVehiculoId(Integer.parseInt(textoBuscarJugador5.getText()), listaVehiculo);
+        listaVehiculo.get(posicion).actualizarVehiculo(actualizarKilometraje, actualizarRevision,  actualizarPlaca, actualizarEstado);
+        this.camionetaXML.actualizarCamioneta(listaVehiculo.get(posicion));
+        this.autobusXML.actualizarAutobusTuristico(listaVehiculo.get(posicion));
     }//GEN-LAST:event_botonBuscarJugador4MouseClicked
 
     private void botonBuscarJugador4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarJugador4MouseExited

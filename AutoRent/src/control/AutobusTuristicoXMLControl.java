@@ -112,10 +112,11 @@ public class AutobusTuristicoXMLControl {
     public boolean actualizarAutobusTuristico(Vehiculo autobus) {
         Element elementoActualizar = buscarElementoPorCodigo(autobus.getCodigoVehiculo());
         if (elementoActualizar != null) {
-            elementoActualizar.getChild(String.valueOf(autobus.getKilometraje()));
-            elementoActualizar.getChild(String.valueOf(autobus.getFechaRevision()));
-            elementoActualizar.getChild(autobus.getNumeroPlaca());
-            elementoActualizar.getChild(String.valueOf(autobus.getEstado()));
+            Vehiculo vehi = (Vehiculo) autobus;
+            elementoActualizar.getChild(String.valueOf(vehi.getKilometraje()));
+            elementoActualizar.getChild(String.valueOf(vehi.getFechaRevision()));
+            elementoActualizar.getChild(vehi.getNumeroPlaca());
+            elementoActualizar.getChild(String.valueOf((char) vehi.getEstado()));
             return updateDocument();
         }
 
